@@ -8,7 +8,7 @@
    - Captcha không lên chọn ngay từ đầu vì có vẻ như có thời gian tồn tại captcha. Nếu chọn trước thì sau khi nhập hết các
      trường của form phải click lại captcha lần nữa
    - Vì các component cho trang submit project chưa viết hoàn thiện lên ở trang view project detail em đã đã phải viết riêng lại nhiều component con cho thư mục ProjectDetail trong ProjectListPage. Và hiện chưa common
-4. Tùng: Vấn đề gặp phải:
+4. Tùng: Vấn đề gặp phải:(ở trang Submit Project)
    - Date Picker ở capital chưa validate được
    - Tokenomics ở Token Information đang fix cứng vì chưa xác định được số token ban đầu sẽ hiện. Cũng như cách tính sao cho tổng % các token chiếm không vượt quá 100 %
 5. Vấn đề chung của cả hai:
