@@ -6,6 +6,8 @@
    - Lỗi tương tự với multi select của antd cũng phải viết onChange onBlur riêng
    - Một vấn là hiệu ứng upload file rất xấu nhưng không fix được
    - Vì các component cho trang submit project chưa viết hoàn thiện lên ở trang view project detail em đã đã phải viết riêng lại nhiều component con cho thư mục ProjectDetail trong ProjectListPage. Và hiện chưa common
-4. Vấn đề chung của cả hai:
+4. Tùng: Vấn đề gặp phải:
+   - Date Picker ở capital chưa validate được
+5. Vấn đề chung của cả hai:
    Viết common component cho các input cho upload, select. Nhưng sau đó mới nhận ra là chưa tính đến phải kết hợp với fomrik. Dẫn đến hiện tượng là nhưng sự kiện onChange, onBlur, và phần báo lỗi của formik mỗi lần gọi component phải viết lại lần nữa
-5. Link phân công việc: https://docs.google.com/spreadsheets/d/1HP_DHtG9nBm5l_a1UDeQ_FYiNy_1WaOAJP6nNOJgsM4/edit?gid=1180668294#gid=1180668294
+6. Link phân công việc: https://docs.google.com/spreadsheets/d/1HP_DHtG9nBm5l_a1UDeQ_FYiNy_1WaOAJP6nNOJgsM4/edit?gid=1180668294#gid=1180668294
