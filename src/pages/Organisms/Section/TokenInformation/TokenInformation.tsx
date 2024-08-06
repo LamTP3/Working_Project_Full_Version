@@ -111,7 +111,7 @@ const TokenInformation: React.FC<TokenInformationProps> = ({ formik }) => {
                   <InputComp
                     name={`token_information.tokennomics[${index}].tokennomics_Title`}
                     placeholder="Title"
-                    value={item.tokennomics_Title}
+                    value={item.tokennomics_title}
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
                   />
