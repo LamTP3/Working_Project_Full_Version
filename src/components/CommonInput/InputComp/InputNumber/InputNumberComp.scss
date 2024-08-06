@@ -1,0 +1,36 @@
+.inputnumber-container {
+  .inputnumber-custom {
+    display: flex;
+    position: relative;
+    align-items: center;
+    background: var(--primary-input-bg) !important;
+    .ant-input-number-handler-wrap {
+      display: none;
+    }
+
+    .ant-input-number-input-wrap {
+      .ant-input-number-input {
+        color: var(--white-color);
+
+        &::placeholder {
+          color: var(--gray-color);
+        }
+      }
+    }
+  }
+  .ant-input-number-disabled {
+    opacity: 0.5;
+  }
+
+  .inputnumber-custom::after {
+    content: var(--unit-content);
+    position: absolute;
+    color: var(--gray-color);
+    right: 0;
+    margin-right: 11px;
+  }
+
+  .unit-label {
+    color: var(--gray-color);
+  }
+}

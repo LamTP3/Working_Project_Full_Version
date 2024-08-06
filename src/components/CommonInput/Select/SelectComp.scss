@@ -1,0 +1,17 @@
+.select-custom {
+  .ant-select-selector {
+    color: var(--white-color) !important;
+    border: none !important;
+    background-color: var(--primary-input-bg) !important;
+  }
+  .ant-select-selection-placeholder {
+    color: var(--gray-color);
+    text-align: left;
+  }
+  .ant-select-selection-item {
+    text-align: left;
+  }
+  .ant-select-arrow {
+    color: var(--gray-color);
+  }
+}

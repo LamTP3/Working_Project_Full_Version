@@ -1,0 +1,38 @@
+.inputnumber-custom,
+.textarea-custom,
+.select-custom,
+.custom-input,
+.search-custom {
+  width: 100%;
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--white-color);
+  border: 1px solid var(--primary-border-color);
+  background-color: var(--primary-input-bg);
+  border-radius: 5px;
+  &::placeholder {
+    color: var(--gray-color);
+  }
+  &:focus,
+  &:hover {
+    border-color: var(--primary-border-color);
+    background: var(--primary-input-bg);
+  }
+}
+
+.inputnumber-custom,
+.select-custom,
+.custom-input {
+  min-height: 40px;
+}
+
+///////////////////////// TEXTAREA ////////////////////////////
+.textarea-custom {
+  resize: none !important;
+}
+.ant-input-outlined[disabled] {
+  background-color: var(--primary-input-bg) !important;
+  opacity: 0.5;
+  color: var(--gray-color) !important;
+  border: none;
+}

@@ -1,0 +1,28 @@
+.iconButton-custom {
+  color: var(--white-color);
+  background: linear-gradient(
+    to right,
+    rgba(0, 63, 221, 1),
+    rgba(24, 255, 113, 1)
+  );
+  border: none;
+  outline: none;
+  &:hover {
+    background: linear-gradient(
+      to right,
+      rgba(0, 63, 221, 1),
+      rgba(24, 255, 113, 1)
+    ) !important;
+    color: var(--white-color) !important;
+  }
+
+  &:disabled {
+    background: linear-gradient(
+      to right,
+      rgba(0, 63, 221, 1),
+      rgba(24, 255, 113, 1)
+    ) !important;
+    color: var(--white-color) !important;
+    opacity: 0.6;
+  }
+}

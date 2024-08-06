@@ -1,0 +1,35 @@
+@import url(../InputComp/InputComp.scss);
+
+.search-custom {
+    display: flex;
+    align-items: center;
+    background: var(--primary-input-bg);
+    transition: all 0.1s;
+
+    input,
+    button {
+        color: var(--white-color);
+        background: var(--primary-input-bg);
+        border: none;
+        min-height: 40px;
+        border-radius: 5px;
+
+        &::placeholder{
+            color: var(--gray-color);
+        }
+
+        &:focus,
+        &:hover{
+            background: var(--primary-input-bg) !important;
+            box-shadow: none;
+        }
+    }
+
+    &:focus-within {
+        box-shadow: 0 0 0 2px var(--effect-color);
+    }
+
+    button:hover{
+        background: var(--primary-border-color) !important;
+    }
+}

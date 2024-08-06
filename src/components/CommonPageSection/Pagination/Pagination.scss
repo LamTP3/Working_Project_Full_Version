@@ -1,0 +1,30 @@
+.ant-pagination {
+  .ant-pagination-item-active {
+    background: linear-gradient(84.71deg, #003fdd -11.67%, #18ff71 111.15%);
+    a {
+      font-family: Chakra Petch;
+      font-size: 14px;
+      font-weight: 700 !important;
+      opacity: 1 !important;
+      color: #ffffff !important;
+    }
+  }
+  .ant-pagination-item {
+    border: none;
+    min-width: 30px;
+    height: 30px;
+    background-color: unset;
+    a {
+      font-family: Chakra Petch;
+      font-size: 14px;
+      font-weight: 500;
+      color: #ffffff;
+      opacity: 0.65;
+    }
+  }
+  .ant-pagination-jump-next {
+    li {
+      display: none;
+    }
+  }
+}
