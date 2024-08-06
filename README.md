@@ -3,8 +3,8 @@
 3. Phúc Lâm: Vấn đề gặp phải:
    - Đầu tiên dùng fomik để validate nhưng datepicker của antd với react formik có vẻ bị conifg
      nên là phải viết riêng onChange, onBlur riêng cho datepicker không dùng trực tiếp của formik đc
-   - lỗi hiện thông báo lỗi cho date picker ở phần capital form submit phần bạn Tùng làm không hiện lỗi được. của em thì ở modal approve nếu ấn nút clear date thì nó chưa báo lỗi ngay
-   - lỗi ở datepicker phần project start date ở phần project detail trong submit form. Khi click vào sự kiện onBlur đã kích hoạt để báo lỗi . Đúng ra phải chờ khi thoát khỏi datepicker mới báo lỗi
+   - Lỗi hiện thông báo lỗi cho date picker ở phần capital form project submit phần bạn Tùng làm không hiện lỗi được. của em thì ở modal approve trong phần table của project list nếu ấn nút clear date thì nó chưa báo lỗi ngay
+   - Lỗi ở datepicker phần project start date ở phần project detail trong submit form. Khi click vào sự kiện onBlur đã kích hoạt để báo lỗi. Đúng ra phải chờ khi thoát khỏi datepicker mới báo lỗi. Tuy nhiên khi chọn Date Picker nó đã báo lỗi
    - Lỗi tương tự với multi select của antd cũng phải viết onChange onBlur riêng
    - Một vấn là hiệu ứng upload file rất xấu nhưng không fix được
    - Captcha không lên chọn ngay từ đầu vì có vẻ như có thời gian tồn tại captcha. Nếu chọn trước thì sau khi nhập hết các
