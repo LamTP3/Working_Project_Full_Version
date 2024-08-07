@@ -14,7 +14,7 @@ export const Warraper = styled.div<Props>`
     opacity: ${(props) => (props.$disabled ? "0.5" : "1")};
   }
   .required-asterisk {
-    color: var(--text-color);
+    color: red;
     margin-left: 5px;
   }
 `;

@@ -19,10 +19,7 @@ const PublicTokenSale: React.FC<PublicTokenSaleProps> = ({ data }) => {
       <Row>
         <Col span={12} className="pr-9">
           <div>
-            <LabelComponent
-              label="Total amount to be raised from public token sales?"
-              required
-            />
+            <LabelComponent label="Total amount to be raised from public token sales?" />
           </div>
           <div>
             <InputComp
@@ -35,10 +32,7 @@ const PublicTokenSale: React.FC<PublicTokenSaleProps> = ({ data }) => {
         </Col>
         <Col span={12} className="pr-9">
           <div>
-            <LabelComponent
-              label="Preferred amount to be raised through GalaxyPad?"
-              required
-            />
+            <LabelComponent label="Preferred amount to be raised through GalaxyPad?" />
           </div>
           <div>
             <InputComp
@@ -51,10 +45,7 @@ const PublicTokenSale: React.FC<PublicTokenSaleProps> = ({ data }) => {
         </Col>
         <Col span={12} className="pr-9 mt-5">
           <div>
-            <LabelComponent
-              label="Are you flexible with the amounts? "
-              required
-            />
+            <LabelComponent label="Are you flexible with the amounts? " />
           </div>
           <div>
             {data ? (
@@ -68,10 +59,7 @@ const PublicTokenSale: React.FC<PublicTokenSaleProps> = ({ data }) => {
         </Col>
         <Col span={12} className="pr-9 mt-5">
           <div>
-            <LabelComponent
-              label="Planned FDV of tokens at launch? "
-              required
-            />
+            <LabelComponent label="Planned FDV of tokens at launch? " />
           </div>
           <div>
             <InputComp

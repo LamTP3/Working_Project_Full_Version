@@ -1,5 +1,5 @@
 import React from "react";
-import SubmitProjectPage from "./pages/SubmitProjectPage/index";
+import SubmitProjectPage from "./pages/Organisms/SubmitProjectPage";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { ToastContainer, Bounce } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -26,9 +26,8 @@ const Layout = () => {
       <Header />
       <Outlet />
     </div>
-  )
-}
-
+  );
+};
 
 const App: React.FC = () => {
   const router = createBrowserRouter([
@@ -44,11 +43,11 @@ const App: React.FC = () => {
         {
           path: "list",
           element: <ProjectListPage />,
-        }
-        , {
+        },
+        {
           path: "detail/:id",
           element: <ProjectDetail />,
-        }
+        },
       ],
     },
   ]);

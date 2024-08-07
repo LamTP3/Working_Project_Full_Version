@@ -386,6 +386,15 @@ const ProjectListPage = () => {
                         minDate={dayjs(item.startDate).add(1, "days")}
                         key={`endDate-${index}`}
                       />
+
+                      <div>
+                        Div1: {formikConfirm.touched.rounds?.[index]?.endDate}
+                      </div>
+                      <div>
+                        Div3:{" "}
+                        {formikConfirm.errors.rounds &&
+                          typeof formikConfirm.errors.rounds[index]}
+                      </div>
                       {formikConfirm.touched.rounds?.[index]?.endDate &&
                       formikConfirm.errors.rounds &&
                       typeof formikConfirm.errors.rounds[index] === "object" &&
