@@ -12,7 +12,7 @@ export const CheckboxWarraper = styled.div<Props>`
   }
   .ant-checkbox-inner {
     border: 1.5px solid var(--text-color) !important;
-    background-color: #24265b !important;
+    background-color: var(--background-color) !important;
     width: 20px !important;
     height: 20px !important;
     border-radius: ${(props) => (props.$circle === true ? "50px" : "4px")};
@@ -20,7 +20,7 @@ export const CheckboxWarraper = styled.div<Props>`
   .ant-checkbox-inner::after {
     inset-inline-start: 29% !important;
   }
-    
+
   .ant-checkbox + span {
     font-family: Inter;
     font-weight: 500;
@@ -30,14 +30,12 @@ export const CheckboxWarraper = styled.div<Props>`
   }
   .ant-checkbox-wrapper-checked {
     .ant-checkbox + span {
-      color: ${(props) => (props.$disabled ? "var(--text-color)" : "var(--white-color)")};
+      color: ${(props) =>
+        props.$disabled ? "var(--text-color)" : "var(--white-color)"};
     }
-
   }
-    :where(.css-dev-only-do-not-override-1uq9j6g).ant-checkbox-disabled .ant-checkbox-inner:after {
+  :where(.css-dev-only-do-not-override-1uq9j6g).ant-checkbox-disabled
+    .ant-checkbox-inner:after {
     border-color: var(--text-color) !important;
-    
-
-}
-
+  }
 `;

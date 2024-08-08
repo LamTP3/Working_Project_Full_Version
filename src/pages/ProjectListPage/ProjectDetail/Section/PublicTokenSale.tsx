@@ -1,8 +1,12 @@
 import { Col, Row } from "antd";
-import LabelComponent from "../../../../components/CommonInput/Label/LabelComponent";
-import InputComp from "../../../../components/CommonInput/InputComp/Input/InputComp";
-import RadioComponent from "../../../../components/CommonInput/Radio/RadioComponent";
-import TextAreaComp from "../../../../components/CommonInput/InputComp/TextArea/TextAreaComp";
+
+import {
+  LabelComponent,
+  InputComp,
+  TextAreaComp,
+  RadioComponent,
+} from "../../../../components";
+
 import { formatPrice } from "../../../../helper/util";
 
 interface PublicTokenSaleProps {

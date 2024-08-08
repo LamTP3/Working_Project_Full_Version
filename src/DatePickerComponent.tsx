@@ -1,4 +1,3 @@
-// DatePickerComponent.tsx
 import React, { useEffect } from "react";
 import { DatePicker } from "antd";
 import { useField, useFormikContext } from "formik";
@@ -15,12 +14,9 @@ const DatePickerComponent: React.FC<DatePickerComponentProps> = ({
 }) => {
   const [field, meta, helpers] = useField(name);
   const { setValue } = helpers;
-  // const { setTouched } = useFormikContext();
   const { setFieldTouched } = useFormikContext();
   const handleChange = (value: any) => {
     setValue(value ? dayjs(value).format("YYYY-MM-DD") : "");
-
-    // setTouched(name, true);
     setFieldTouched(name, true);
   };
 

@@ -1,7 +1,10 @@
 import { Col, Row } from "antd";
-import LabelComponent from "../../../../components/CommonInput/Label/LabelComponent";
-import UploadFile from "../../../../components/CommonInput/UploadFile/UploadFile";
-import InputComp from "../../../../components/CommonInput/InputComp/Input/InputComp";
+import {
+  LabelComponent,
+  UploadFileComp,
+  InputComp,
+} from "../../../../components";
+
 import { FormikProps } from "formik";
 import { Project } from "../../../../type/type";
 
@@ -31,7 +34,7 @@ const BasicInformation: React.FC<BasicInformationProps> = ({ formik }) => {
                         onBlur={formik.handleBlur}
                       />
                       {formik.touched.basic_information?.project_name &&
-                        formik.errors.basic_information?.project_name ? (
+                      formik.errors.basic_information?.project_name ? (
                         <div className="text-red-600">
                           {formik.errors.basic_information.project_name}
                         </div>
@@ -51,7 +54,7 @@ const BasicInformation: React.FC<BasicInformationProps> = ({ formik }) => {
                         onBlur={formik.handleBlur}
                       />
                       {formik.touched.basic_information?.contact_name &&
-                        formik.errors.basic_information?.contact_name ? (
+                      formik.errors.basic_information?.contact_name ? (
                         <div className="text-red-600">
                           {formik.errors.basic_information.contact_name}
                         </div>
@@ -65,7 +68,7 @@ const BasicInformation: React.FC<BasicInformationProps> = ({ formik }) => {
                   <LabelComponent label="Project Logo" required />
                 </div>
                 <div className="mt-2">
-                  <UploadFile
+                  <UploadFileComp
                     width="137px"
                     height="137px"
                     label="Drag and drop an image file here or click"
@@ -78,7 +81,7 @@ const BasicInformation: React.FC<BasicInformationProps> = ({ formik }) => {
                     }
                   />
                   {formik.touched.basic_information?.project_logo &&
-                    formik.errors.basic_information?.project_logo ? (
+                  formik.errors.basic_information?.project_logo ? (
                     <div className="text-red-600">
                       {formik.errors.basic_information.project_logo}
                     </div>
@@ -112,7 +115,7 @@ const BasicInformation: React.FC<BasicInformationProps> = ({ formik }) => {
                     </div>
                     {formik.touched.basic_information
                       ?.contact_telegram_handle &&
-                      formik.errors.basic_information?.contact_telegram_handle ? (
+                    formik.errors.basic_information?.contact_telegram_handle ? (
                       <div className="text-red-600">
                         {
                           formik.errors.basic_information
@@ -135,7 +138,7 @@ const BasicInformation: React.FC<BasicInformationProps> = ({ formik }) => {
                         onBlur={formik.handleBlur}
                       />
                       {formik.touched.basic_information?.email &&
-                        formik.errors.basic_information?.email ? (
+                      formik.errors.basic_information?.email ? (
                         <div className="text-red-600">
                           {formik.errors.basic_information.email}
                         </div>
@@ -149,7 +152,7 @@ const BasicInformation: React.FC<BasicInformationProps> = ({ formik }) => {
                   <LabelComponent label="Project Cover" />
                 </div>
                 <div className="mt-2">
-                  <UploadFile
+                  <UploadFileComp
                     width="468px"
                     height="137px"
                     label="Drag and drop an image/video file here or click"

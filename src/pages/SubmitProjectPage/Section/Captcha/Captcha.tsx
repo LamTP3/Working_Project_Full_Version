@@ -1,5 +1,5 @@
 import ReCAPTCHA from "react-google-recaptcha";
-import "./Action.scss";
+import "./Captcha.scss";
 
 interface ActionProps {
   onCaptchaChange: (value: any) => void;

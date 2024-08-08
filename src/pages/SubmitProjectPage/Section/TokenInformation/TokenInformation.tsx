@@ -1,9 +1,12 @@
 import { Col, Row } from "antd";
 import { MinusOutlined, PlusOutlined } from "@ant-design/icons";
-import LabelComponent from "../../../../components/CommonInput/Label/LabelComponent";
-import InputComp from "../../../../components/CommonInput/InputComp/Input/InputComp";
-import InputNumberComp from "../../../../components/CommonInput/InputComp/InputNumber/InputNumberComp";
-import IconButtonComp from "../../../../components/CommonInput/IconButton/IconButtonComp";
+import {
+  LabelComponent,
+  InputComp,
+  InputNumberComp,
+  IconButtonComp,
+} from "../../../../components";
+
 import { FormikProps } from "formik";
 import { Project } from "../../../../type/type";
 import React from "react";

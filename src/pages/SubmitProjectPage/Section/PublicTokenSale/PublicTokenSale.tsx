@@ -1,8 +1,11 @@
 import { Col, Row } from "antd";
-import LabelComponent from "../../../../components/CommonInput/Label/LabelComponent";
-import InputComp from "../../../../components/CommonInput/InputComp/Input/InputComp";
-import RadioComponent from "../../../../components/CommonInput/Radio/RadioComponent";
-import TextAreaComp from "../../../../components/CommonInput/InputComp/TextArea/TextAreaComp";
+import {
+  LabelComponent,
+  TextAreaComp,
+  InputComp,
+  RadioComponent,
+} from "../../../../components";
+
 import { FormikProps } from "formik";
 import { Project } from "../../../../type/type";
 

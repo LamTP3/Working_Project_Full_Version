@@ -1,20 +1,16 @@
-import axios from "axios";
-
-export const getAllProject = async () => {
-  const response = await axios.get("http://localhost:9999/Project");
-  return response.data;
+import axios from "../axios.interceptor";
+import { Project, Project_Status } from "../type/type";
+export const getAllProject = async (): Promise<Project[]> => {
+  return axios.get("/Project");
 };
-export const getAllProjectStatus = async () => {
-  const response = await axios.get("http://localhost:9999/Project_Status");
-  return response.data;
+export const getAllProjectStatus = async (): Promise<Project_Status[]> => {
+  return axios.get("/Project_Status");
 };
 
-export const getProductById = async (id: any) => {
-  const response = await axios.get(`http://localhost:9999/Project/${id}`);
-  return response.data;
+export const getProductById = async (id: any): Promise<Project> => {
+  return axios.get(`/Project/${id}`);
 };
 
 export const postNewProject = async (project: any) => {
-  const response = await axios.post("http://localhost:9999/Project", project);
-  return response.data;
+  return axios.post("/Project", project);
 };

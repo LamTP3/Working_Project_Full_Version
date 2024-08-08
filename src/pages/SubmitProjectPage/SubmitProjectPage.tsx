@@ -1,18 +1,21 @@
 import { useState } from "react";
-import HeaderPage from "../HeaderPage";
+
 import * as Yup from "yup";
-import CollapseComponent from "../../components/CommonPageSection/Collapse/CollapseComponent";
-import BasicInformation from "./Section/BasicInformation/BasicInformation";
-import ProjectDetails from "./Section/ProjectDetail/ProjectDetails";
-import Links from "./Section/Links/Links";
-import TokenInformation from "./Section/TokenInformation/TokenInformation";
-import Capital from "./Section/Capital/Capital";
-import PublicTokenSale from "./Section/PublicTokenSale/PublicTokenSale";
-import StatusOfPartnerships from "./Section/Status of Partnerships/StatusOfPartnerships";
-import Action from "./Section/Action/Action";
+import { ButtonComponent, CollapseComponent } from "../../components";
+import {
+  BasicInformation,
+  ProjectDetails,
+  Links,
+  TokenInformation,
+  Capital,
+  PublicTokenSale,
+  StatusOfPartnerships,
+  Captcha,
+  Header,
+} from "./Section";
+
 import { useFormik, FormikProps } from "formik";
 import { Project } from "../../type/type";
-import ButtonComponent from "../../components/CommonInput/Button/ButtonComponent";
 import { toast } from "react-toastify";
 import { postNewProject } from "../../service/service";
 import { useNavigate } from "react-router";
@@ -202,79 +205,77 @@ const SubmitProjectPage = () => {
   };
 
   return (
-    <>
-      <div className="lg:mx-[200px] my-[50px] mx-[50px]">
-        <div className="mb-12">
-          <HeaderPage />
+    <div className="lg:mx-[200px] my-[50px] mx-[50px]">
+      <div className="mb-12">
+        <Header />
+      </div>
+
+      <form onSubmit={handleSubmit}>
+        <div className="mt-5">
+          <CollapseComponent
+            title="Basic Information"
+            child={<BasicInformation formik={formik} />}
+            active
+          />
         </div>
 
-        <form onSubmit={handleSubmit}>
-          <div className="mt-5">
-            <CollapseComponent
-              title="Basic Information"
-              child={<BasicInformation formik={formik} />}
-              active
-            />
-          </div>
+        <div className="mt-5">
+          <CollapseComponent
+            title="Project Details"
+            child={<ProjectDetails formik={formik} />}
+            active
+          />
+        </div>
 
-          <div className="mt-5">
-            <CollapseComponent
-              title="Project Details"
-              child={<ProjectDetails formik={formik} />}
-              active
-            />
-          </div>
+        <div className="mt-5">
+          <CollapseComponent
+            title="Links"
+            child={<Links formik={formik} />}
+            active
+          />
+        </div>
 
-          <div className="mt-5">
-            <CollapseComponent
-              title="Links"
-              child={<Links formik={formik} />}
-              active
-            />
-          </div>
-
-          <div className="mt-5">
-            <CollapseComponent
-              title="Token Information"
-              child={<TokenInformation formik={formik} />}
-              active
-            />
-          </div>
-          <div className="mt-5">
-            <CollapseComponent
-              title="Capital"
-              child={<Capital formik={formik} />}
-              active
-            />
-          </div>
-          <div className="mt-5">
-            <CollapseComponent
-              title="Public Token Sale"
-              child={<PublicTokenSale formik={formik} />}
-              active
-            />
-          </div>
-          <div className="mt-5">
-            <CollapseComponent
-              title="Status of Partnerships"
-              child={<StatusOfPartnerships formik={formik} />}
-              active
-            />
-          </div>
-          <div className="mt-5">
-            <Action onCaptchaChange={setCaptchaValue} />
-          </div>
-          <div className="mt-5">
-            <ButtonComponent
-              htmlType="submit"
-              button_content="Submit Information"
-              arrow_icon={true}
-              background_color="Gradient"
-            />
-          </div>
-        </form>
-      </div>
-    </>
+        <div className="mt-5">
+          <CollapseComponent
+            title="Token Information"
+            child={<TokenInformation formik={formik} />}
+            active
+          />
+        </div>
+        <div className="mt-5">
+          <CollapseComponent
+            title="Capital"
+            child={<Capital formik={formik} />}
+            active
+          />
+        </div>
+        <div className="mt-5">
+          <CollapseComponent
+            title="Public Token Sale"
+            child={<PublicTokenSale formik={formik} />}
+            active
+          />
+        </div>
+        <div className="mt-5">
+          <CollapseComponent
+            title="Status of Partnerships"
+            child={<StatusOfPartnerships formik={formik} />}
+            active
+          />
+        </div>
+        <div className="mt-5">
+          <Captcha onCaptchaChange={setCaptchaValue} />
+        </div>
+        <div className="mt-5">
+          <ButtonComponent
+            htmlType="submit"
+            button_content="Submit Information"
+            arrow_icon={true}
+            background_color="Gradient"
+          />
+        </div>
+      </form>
+    </div>
   );
 };
 

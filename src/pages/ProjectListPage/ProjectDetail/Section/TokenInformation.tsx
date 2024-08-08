@@ -1,9 +1,11 @@
 import { Col, Row } from "antd";
 import { MinusOutlined } from "@ant-design/icons";
-import LabelComponent from "../../../../components/CommonInput/Label/LabelComponent";
-import InputComp from "../../../../components/CommonInput/InputComp/Input/InputComp";
-import InputNumberComp from "../../../../components/CommonInput/InputComp/InputNumber/InputNumberComp";
-import IconButtonComp from "../../../../components/CommonInput/IconButton/IconButtonComp";
+import {
+  InputNumberComp,
+  LabelComponent,
+  InputComp,
+  IconButtonComp,
+} from "../../../../components";
 import React from "react";
 
 interface TokenInformationProps {
