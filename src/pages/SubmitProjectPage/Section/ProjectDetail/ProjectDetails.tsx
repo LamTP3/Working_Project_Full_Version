@@ -1,8 +1,10 @@
 import { Col, Row } from "antd";
-import LabelComponent from "../../../../components/CommonInput/Label/LabelComponent";
-import DatePickerComponent from "../../../../components/CommonInput/DatePicker/DatePicker";
-import MultipleSelect from "../../../../components/CommonInput/MultipleSelect/MultipleSelect";
-import TextAreaComp from "../../../../components/CommonInput/InputComp/TextArea/TextAreaComp";
+import {
+  LabelComponent,
+  DatePickerComponent,
+  MultipleSelect,
+  TextAreaComp,
+} from "../../../../components";
 import { FormikProps } from "formik";
 import { Project } from "../../../../type/type";
 import dayjs from "dayjs";
@@ -40,16 +42,6 @@ const ProjectDetails: React.FC<ProjectDetailProps> = ({ formik }) => {
                   formik={formik}
                   fieldName="project_detail.start_date"
                 />
-                <div className="text-red-600">
-                  {formik.errors.project_detail?.start_date
-                    ? "error"
-                    : "no error"}
-                </div>
-                <div className="text-red-600">
-                  {formik.touched.project_detail?.start_date
-                    ? "touched"
-                    : "dont touch"}
-                </div>
               </div>
             </Col>
           </Row>

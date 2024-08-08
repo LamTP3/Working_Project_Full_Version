@@ -1,6 +1,7 @@
 import { Col, Row } from "antd";
 import { useState } from "react";
-import CheckboxComponent from "../../../../components/CommonInput/Checkbox/CheckboxComponent";
+import { CheckboxComponent } from "../../../../components";
+
 interface Props {
   data: any;
 }

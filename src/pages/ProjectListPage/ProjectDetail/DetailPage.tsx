@@ -1,23 +1,25 @@
 import { useParams } from "react-router-dom";
-import CollapseComponent from "../../../components/CommonPageSection/Collapse/CollapseComponent";
-import BasicInformation from "./Section/BasicInformation";
-import ProjectDetails from "./Section/ProjectDetail";
-import Link from "./Section/Link";
-import TokenInformation from "./Section/TokenInformation";
-import Capital from "./Section/Capital";
-import PublicTokenSale from "./Section/PublicTokenSale";
-import StatusOfPartnership from "./Section/StatusOfPartnership";
+import { CollapseComponent } from "../../../components";
+import {
+  BasicInformation,
+  ProjectDetail,
+  Link,
+  TokenInformation,
+  Capital,
+  PublicTokenSale,
+  StatusOfPartnership,
+} from "./Section";
 import { getProductById } from "../../../service/service";
 import { useEffect, useState } from "react";
 import { Project } from "../../../type/type";
 
-function ProjectDetail() {
+function DetailPage() {
   const { id } = useParams();
   const [project, setProject] = useState<Project>();
   useEffect(() => {
     const fetchData = async () => {
-      const data = await getProductById(id);
-      setProject(data);
+      const response = await getProductById(id);
+      setProject(response);
     };
     fetchData();
   }, [id]);
@@ -33,7 +35,7 @@ function ProjectDetail() {
       <div className="mt-5">
         <CollapseComponent
           title="Project Details"
-          child={<ProjectDetails data={project?.project_detail} />}
+          child={<ProjectDetail data={project?.project_detail} />}
           active={true}
         />
       </div>
@@ -76,4 +78,4 @@ function ProjectDetail() {
   );
 }
 
-export default ProjectDetail;
+export default DetailPage;

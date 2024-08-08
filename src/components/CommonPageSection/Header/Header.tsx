@@ -10,13 +10,13 @@ const Header = () => {
           <LogoComp size="medium" />
           <h2 className="header-logo-text">Galaxy Pad</h2>
         </Link>
-        {/* <div className="header-left">
-          <LogoComp size="medium" />
-          <h2 className="header-logo-text">Galaxy Pad</h2>
-        </div> */}
-        <div className="header-mid flex">
-          <Link className="mr-3 cursor-pointer" to="/list" >projects</Link>
-          <Link className="cursor-pointer" to="/">Come to Add Project</Link>
+        <div className="header-mid flex text-center justify-center">
+          <Link className="mr-3 cursor-pointer" to="/list">
+            Projects
+          </Link>
+          <Link className="mr-3cursor-pointer" to="/">
+            Add Project
+          </Link>
         </div>
         <div className="header-right">
           <div className="header-welcome">

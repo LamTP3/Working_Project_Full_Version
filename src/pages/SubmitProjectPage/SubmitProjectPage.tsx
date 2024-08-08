@@ -1,18 +1,21 @@
 import { useState } from "react";
-import HeaderPage from "../HeaderPage";
+
 import * as Yup from "yup";
-import CollapseComponent from "../../components/CommonPageSection/Collapse/CollapseComponent";
-import BasicInformation from "./Section/BasicInformation/BasicInformation";
-import ProjectDetails from "./Section/ProjectDetail/ProjectDetails";
-import Links from "./Section/Links/Links";
-import TokenInformation from "./Section/TokenInformation/TokenInformation";
-import Capital from "./Section/Capital/Capital";
-import PublicTokenSale from "./Section/PublicTokenSale/PublicTokenSale";
-import StatusOfPartnerships from "./Section/Status of Partnerships/StatusOfPartnerships";
-import Action from "./Section/Action/Action";
+import { ButtonComponent, CollapseComponent } from "../../components";
+import {
+  BasicInformation,
+  ProjectDetails,
+  Links,
+  TokenInformation,
+  Capital,
+  PublicTokenSale,
+  StatusOfPartnerships,
+  Captcha,
+  Header,
+} from "./Section";
+
 import { useFormik, FormikProps } from "formik";
 import { Project } from "../../type/type";
-import ButtonComponent from "../../components/CommonInput/Button/ButtonComponent";
 import { toast } from "react-toastify";
 import { postNewProject } from "../../service/service";
 import { useNavigate } from "react-router";
@@ -202,10 +205,10 @@ const SubmitProjectPage = () => {
   };
 
   return (
-    <>
-      <div className="lg:mx-[200px] my-[50px] mx-[50px]">
+    <div className="w-full xl:max-w-[1000px] md:max-w-[600px] sm:max-w-[350px] mx-auto">
+      <div className="mx-[40px] my-[40px]">
         <div className="mb-12">
-          <HeaderPage />
+          <Header />
         </div>
 
         <form onSubmit={handleSubmit}>
@@ -262,7 +265,7 @@ const SubmitProjectPage = () => {
             />
           </div>
           <div className="mt-5">
-            <Action onCaptchaChange={setCaptchaValue} />
+            <Captcha onCaptchaChange={setCaptchaValue} />
           </div>
           <div className="mt-5">
             <ButtonComponent
@@ -274,7 +277,7 @@ const SubmitProjectPage = () => {
           </div>
         </form>
       </div>
-    </>
+    </div>
   );
 };
 

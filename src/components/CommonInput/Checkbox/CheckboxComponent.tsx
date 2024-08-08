@@ -12,23 +12,21 @@ const CheckboxComponent: React.FC<CheckBoxProps> = ({
   disabled,
   ...props
 }) => {
-  const defaultValues = allValues ? allValues : [optionsData[0]?.value];
+  const defaultValues = allValues ?? [optionsData[0]?.value];
   return (
-    <>
-      <CheckboxWarraper
-        $circle={useCricle}
-        $heightElement={height}
-        $disabled={disabled}
-      >
-        <Checkbox.Group
-          options={optionsData}
-          defaultValue={defaultValues}
-          onChange={onChange}
-          disabled={disabled}
-          {...props}
-        />
-      </CheckboxWarraper>
-    </>
+    <CheckboxWarraper
+      $circle={useCricle}
+      $heightElement={height}
+      $disabled={disabled}
+    >
+      <Checkbox.Group
+        options={optionsData}
+        defaultValue={defaultValues}
+        onChange={onChange}
+        disabled={disabled}
+        {...props}
+      />
+    </CheckboxWarraper>
   );
 };
 

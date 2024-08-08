@@ -4,5 +4,6 @@
 @import "variable";
 
 body {
-  background-color: #24265b;
+  font-family: Inter;
+  background-color: var(--background-color);
 }

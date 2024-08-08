@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Warraper = styled.div`
   .ant-collapse {
-    background-color: #24265b !important;
+    background-color: var(--background-color) !important;
     border: none;
     .ant-collapse-header-text {
       color: var(--white-color);
@@ -14,7 +14,7 @@ export const Warraper = styled.div`
   }
   .ant-collapse-content {
     border: none !important;
-    background-color: #24265b !important;
+    background-color: var(--background-color) !important;
     .ant-collapse-content-box {
       min-height: 100px;
     }
@@ -40,5 +40,17 @@ export const Warraper = styled.div`
 
   .ant-collapse-content-box {
     padding: 16px 0px !important;
+  }
+
+  @media (max-width: 600px) {
+    .header-style{
+      gap: 10px;
+    }
+  }
+
+  @media (max-width: 400px) {
+    .header-style{
+      gap: inherit;
+    }
   }
 `;

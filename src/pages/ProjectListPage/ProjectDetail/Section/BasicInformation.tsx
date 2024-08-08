@@ -1,7 +1,9 @@
 import { Col, Row } from "antd";
-import LabelComponent from "../../../../components/CommonInput/Label/LabelComponent";
-import UploadFile from "../../../../components/CommonInput/UploadFile/UploadFile";
-import InputComp from "../../../../components/CommonInput/InputComp/Input/InputComp";
+import {
+  LabelComponent,
+  UploadFileComp,
+  InputComp,
+} from "../../../../components";
 
 interface BasicInformationProps {
   data: any;
@@ -49,7 +51,7 @@ const BasicInformation: React.FC<BasicInformationProps> = ({ data }) => {
                   <LabelComponent label="Project Logo" />
                 </div>
                 <div className="mt-2">
-                  <UploadFile
+                  <UploadFileComp
                     width="137px"
                     height="137px"
                     label="Drag and drop an image file here or click"
@@ -98,7 +100,7 @@ const BasicInformation: React.FC<BasicInformationProps> = ({ data }) => {
                   <LabelComponent label="Project Cover" />
                 </div>
                 <div className="mt-2">
-                  <UploadFile
+                  <UploadFileComp
                     width="468px"
                     height="137px"
                     label="Drag and drop an image/video file here or click"

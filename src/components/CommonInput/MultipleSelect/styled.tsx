@@ -1,10 +1,10 @@
 import styled from "styled-components";
 type Props = {
   $disabled?: boolean;
-}
+};
 export const MultipleSelectWarraper = styled.div<Props>`
   .ant-select-selector {
-  opacity: ${(props) => (props.$disabled ? "0.5" : "1")};
+    opacity: ${(props) => (props.$disabled ? "0.5" : "1")};
     border: none !important;
     background-color: var(--primary-input-bg) !important;
     .ant-select-selection-overflow {
@@ -38,6 +38,11 @@ export const MultipleSelectWarraper = styled.div<Props>`
       color: #7d7e8d;
       font-size: 16px;
       font-weight: 400;
+    }
+  }
+  .ant-select-selection-search {
+    .ant-select-selection-search-input {
+      color: #7d7e8d !important;
     }
   }
 `;

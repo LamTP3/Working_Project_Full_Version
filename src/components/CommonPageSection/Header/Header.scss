@@ -55,3 +55,71 @@
     }
   }
 }
+
+
+/* Media Queries for Responsive Design */
+@media (max-width: 1024px) {
+  .header-inner {
+    padding: 0 40px;
+    gap: 20px;
+  }
+
+  .header-logo-text {
+    font-size: 20px;
+  }
+
+  .header-logout-btn {
+    padding: 8px 20px;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+    gap: 20px;
+  }
+
+  .header-mid {
+    width: 100%;
+    text-align: center;
+  }
+
+  .header-right {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .header-logout-btn {
+    width: 100%;
+    text-align: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .header-container {
+    position: relative;
+  }
+}
+
+@media (max-width: 480px) {
+  .header-inner {
+    padding: 0 10px;
+    gap: 10px;
+
+    .header-right {
+      flex-direction: row;
+    }
+  }
+
+  .header-logo-text {
+    font-size: 18px;
+  }
+
+  .header-logout-btn {
+    padding: 6px 16px;
+  }
+}

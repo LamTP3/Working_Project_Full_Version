@@ -4,7 +4,6 @@ import "./Table.scss";
 
 interface TableProps {
   data: Project[];
-
   onPageChange: (page: number, size?: number) => void;
   currentPage: number;
   pageSize: number;

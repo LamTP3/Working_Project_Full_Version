@@ -1,4 +1,4 @@
-import LogoComp from "../../components/CommonPageSection/Logo/LogoComp";
+import { LogoComp } from "../../../../components";
 const HeaderPage = () => {
   return (
     <div className="sticky-header">

@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Col, Row } from "antd";
 import { FormikProps } from "formik";
-import CheckboxComponent from "../../../../components/CommonInput/Checkbox/CheckboxComponent";
-import DatePickerComponent from "../../../../components/CommonInput/DatePicker/DatePicker";
+import { CheckboxComponent, DatePickerComponent } from "../../../../components";
+
 import { Project } from "../../../../type/type";
 import dayjs from "dayjs";
 

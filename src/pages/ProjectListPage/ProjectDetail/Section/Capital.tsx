@@ -1,6 +1,5 @@
 import { Col, Row } from "antd";
-import CheckboxComponent from "../../../../components/CommonInput/Checkbox/CheckboxComponent";
-import DatePickerComponent from "../../../../components/CommonInput/DatePicker/DatePicker";
+import { CheckboxComponent, DatePickerComponent } from "../../../../components";
 import dayjs from "dayjs";
 
 interface Props {
@@ -43,10 +42,18 @@ const Capital = ({ data }: Props) => {
           {data?.rounds?.map((item: any, index: any) => (
             <Row key={index} className="mt-5" align="middle" gutter={[40, 0]}>
               <Col span={12}>
-                <DatePickerComponent disabled value={dayjs(item.startDate)} />
+                <DatePickerComponent
+                  fieldName="startDate"
+                  disabled
+                  value={dayjs(item.startDate)}
+                />
               </Col>
               <Col span={12}>
-                <DatePickerComponent disabled value={dayjs(item.endDate)} />
+                <DatePickerComponent
+                  fieldName="endDate"
+                  disabled
+                  value={dayjs(item.endDate)}
+                />
               </Col>
             </Row>
           ))}

@@ -1,15 +1,17 @@
-import BreadCrumbComp from "../../components/CommonPageSection/BreadCrumb/BreadCrumbComp";
-import ModalComponents from "../../components/CommonPageSection/Modal/ModalComponent";
-import TextAreaComp from "../../components/CommonInput/InputComp/TextArea/TextAreaComp";
-import DatePickerComponent from "../../components/CommonInput/DatePicker/DatePicker";
-import ButtonComponent from "../../components/CommonInput/Button/ButtonComponent";
+import {
+  DatePickerComponent,
+  ButtonComponent,
+  LabelComponent,
+  SearchComp,
+  TabsComp,
+  LogoComp,
+  Table,
+  BreadCrumbComp,
+  ModalComponents,
+  TextAreaComp,
+} from "../../components";
 import { ModalName } from "../../components/CommonPageSection/Modal/ModalType";
-import LabelComponent from "../../components/CommonInput/Label/LabelComponent";
 import { getAllProject, getAllProjectStatus } from "../../service/service";
-import SearchComp from "../../components/CommonInput/Search/SearchComp";
-import TabsComp from "../../components/CommonPageSection/Tabs/TabsComp";
-import LogoComp from "../../components/CommonPageSection/Logo/LogoComp";
-import Table from "../../components/CommonPageSection/Table/Table";
 import { Project, Project_Status } from "../../type/type";
 import { formatPrice } from "../../helper/util";
 import { useState, useEffect } from "react";
@@ -268,6 +270,7 @@ const ProjectListPage = () => {
                           width={"100%"}
                           height={"100%"}
                           key={selectedProject?.basic_information.project_logo}
+                          alt="logo"
                         />
                       ) : (
                         <LogoComp size="small" key="logo" />
@@ -304,7 +307,6 @@ const ProjectListPage = () => {
                             : null
                         }
                         maxDate={dayjs(item.endDate).subtract(1, "day")}
-                        key={`startDate-${index}`}
                       />
                       {formikConfirm.touched.rounds?.[index]?.startDate &&
                       formikConfirm.errors.rounds &&
@@ -327,17 +329,8 @@ const ProjectListPage = () => {
                         formik={formikConfirm}
                         fieldName={`rounds.${index}.endDate`}
                         minDate={dayjs(item.startDate).add(1, "days")}
-                        key={`endDate-${index}`}
                       />
 
-                      <div>
-                        Div1: {formikConfirm.touched.rounds?.[index]?.endDate}
-                      </div>
-                      <div>
-                        Div3:{" "}
-                        {formikConfirm.errors.rounds &&
-                          typeof formikConfirm.errors.rounds[index]}
-                      </div>
                       {formikConfirm.touched.rounds?.[index]?.endDate &&
                       formikConfirm.errors.rounds &&
                       typeof formikConfirm.errors.rounds[index] === "object" &&
@@ -371,6 +364,7 @@ const ProjectListPage = () => {
                           width={"100%"}
                           height={"100%"}
                           key={selectedProject?.basic_information.project_logo}
+                          alt="logo"
                         />
                       ) : (
                         <LogoComp size="small" key="logo" />
@@ -450,55 +444,51 @@ const ProjectListPage = () => {
       {
         key: "1",
         label: (
-          <div
+          <button
             className="text-[#fff]"
             onClick={() => navigate(`/detail/` + selectedProject?.id)}
           >
             View detail
-          </div>
+          </button>
         ),
       },
       {
         key: "2",
         label: (
-          <div
+          <button
             className="text-right text-[#53FF50]"
             onClick={() => handleOpenModal("Confirm")}
           >
             Approve
-          </div>
+          </button>
         ),
       },
       {
         key: "3",
         label: (
-          <div
+          <button
             className="text-right text-[#FF5E5E]"
             onClick={() => handleOpenModal("Reject")}
           >
             Reject
-          </div>
+          </button>
         ),
       },
       {
         key: "4",
         label: (
-          <div
+          <button
             className="text-right text-[#F4C349]"
             onClick={() => handleOpenModal("Delete")}
           >
             Delete
-          </div>
+          </button>
         ),
       },
     ];
-
-    // Remove items based on the active tab
     if (activeTab === "2") {
-      // Approved
       return baseItems.filter((item) => item?.key !== "2");
     } else if (activeTab === "3") {
-      // Rejected
       return baseItems.filter((item) => item?.key !== "3");
     }
 
@@ -506,18 +496,16 @@ const ProjectListPage = () => {
   };
 
   const TableHead = (
-    <>
-      <tr>
-        <th>Project</th>
-        <th>Participants</th>
-        <th>Total Raised</th>
-        <th>Current Price</th>
-        <th>Ath Since Ido</th>
-        <th>Ended In</th>
-        <th>Chain</th>
-        <th></th>
-      </tr>
-    </>
+    <tr>
+      <th>Project</th>
+      <th>Participants</th>
+      <th>Total Raised</th>
+      <th>Current Price</th>
+      <th>Ath Since Ido</th>
+      <th>Ended In</th>
+      <th>Chain</th>
+      <th></th>
+    </tr>
   );
 
   const TableBody = (data: any) => {
@@ -533,6 +521,7 @@ const ProjectListPage = () => {
                       src={item.basic_information.project_logo}
                       width={"100%"}
                       height={"100%"}
+                      alt="logo"
                     />
                   ) : (
                     <LogoComp size="small" />
@@ -581,13 +570,11 @@ const ProjectListPage = () => {
       children: (
         <Table
           data={getFilteredData("Pending")}
-          onOpenModal={handleOpenModal}
           onPageChange={handlePageChange}
           currentPage={currentPage}
           pageSize={pageSize}
           TableHead={TableHead}
           TableBody={TableBody}
-          dropdownItems={getMenuItems()}
         />
       ),
     },
@@ -597,11 +584,9 @@ const ProjectListPage = () => {
       children: (
         <Table
           data={getFilteredData("Approve")}
-          onOpenModal={handleOpenModal}
           onPageChange={handlePageChange}
           currentPage={currentPage}
           pageSize={pageSize}
-          dropdownItems={getMenuItems()}
           TableHead={TableHead}
           TableBody={TableBody}
         />
@@ -613,11 +598,9 @@ const ProjectListPage = () => {
       children: (
         <Table
           data={getFilteredData("Reject")}
-          onOpenModal={handleOpenModal}
           onPageChange={handlePageChange}
           currentPage={currentPage}
           pageSize={pageSize}
-          dropdownItems={getMenuItems()}
           TableHead={TableHead}
           TableBody={TableBody}
         />

@@ -1,12 +1,12 @@
 import React from "react";
-import SubmitProjectPage from "./pages/Organisms/SubmitProjectPage";
+import SubmitProjectPage from "./pages/SubmitProjectPage/SubmitProjectPage";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { ToastContainer, Bounce } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Header from "./components/CommonPageSection/Header/Header";
 import { Outlet } from "react-router";
-import ProjectListPage from "./pages/ProjectListPage";
-import ProjectDetail from "./pages/ProjectListPage/ProjectDetail/ProjectDetail";
+import ProjectListPage from "./pages/ProjectListPage/ProjectListPage";
+import ProjectDetail from "./pages/ProjectListPage/ProjectDetail/DetailPage";
 const Layout = () => {
   return (
     <div>

@@ -1,8 +1,10 @@
 import { Col, Row } from "antd";
-import LabelComponent from "../../../../components/CommonInput/Label/LabelComponent";
-import DatePickerComponent from "../../../../components/CommonInput/DatePicker/DatePicker";
-import MultipleSelect from "../../../../components/CommonInput/MultipleSelect/MultipleSelect";
-import TextAreaComp from "../../../../components/CommonInput/InputComp/TextArea/TextAreaComp";
+import {
+  LabelComponent,
+  DatePickerComponent,
+  TextAreaComp,
+  MultipleSelect,
+} from "../../../../components";
 import dayjs from "dayjs";
 
 interface ProjectDetailProps {
@@ -21,7 +23,7 @@ const ProjectDetails: React.FC<ProjectDetailProps> = ({ data }) => {
               </div>
               <div className="mt-[8px]">
                 <DatePickerComponent
-                  name="project_detail.start_date"
+                  fieldName="project_detail.start_date"
                   placeholder="estimate"
                   disabled={true}
                   value={data?.start_date ? dayjs(data?.start_date) : null}
