@@ -22,7 +22,7 @@ export const CheckboxWarraper = styled.div<Props>`
   }
 
   .ant-checkbox + span {
-    font-family: Inter;
+    font-family: Inter, sans-serif;
     font-weight: 500;
     font-size: 16px;
     line-height: 19.26px;

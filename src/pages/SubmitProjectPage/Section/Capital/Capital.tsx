@@ -41,7 +41,12 @@ const Capital: React.FC<CapitalProps> = ({ formik }) => {
         </Col>
         <Col span={16}>
           {options.map((option, index) => (
-            <Row key={index} className="mt-5" align="middle" gutter={[40, 0]}>
+            <Row
+              key={option.value}
+              className="mt-5"
+              align="middle"
+              gutter={[40, 0]}
+            >
               <Col span={12}>
                 <DatePickerComponent
                   fieldName={`capital.rounds[${index}].startDate`}
