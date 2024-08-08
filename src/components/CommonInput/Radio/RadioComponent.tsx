@@ -23,8 +23,8 @@ const RadioComponent: React.FC<RadioComponentProps> = ({
   return (
     <StyledRadio $diabled={props.disabled}>
       <Radio.Group onChange={onChange} value={value} {...props}>
-        {options.map((option, index) => (
-          <Radio key={index} value={option.value}>
+        {options.map((option) => (
+          <Radio key={option.value} value={option.value}>
             {option.label}
           </Radio>
         ))}

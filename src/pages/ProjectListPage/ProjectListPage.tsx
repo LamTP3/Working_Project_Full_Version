@@ -11,7 +11,12 @@ import {
   TextAreaComp,
 } from "../../components";
 import { ModalName } from "../../components/CommonPageSection/Modal/ModalType";
-import { getAllProject, getAllProjectStatus } from "../../service/service";
+import {
+  getAllProject,
+  getAllProjectStatus,
+  deleteProject,
+  updateProject,
+} from "../../service/service";
 import { Project, Project_Status } from "../../type/type";
 import { formatPrice } from "../../helper/util";
 import { useState, useEffect } from "react";
@@ -21,7 +26,6 @@ import { MenuProps } from "antd/lib";
 import { useFormik } from "formik";
 import { Button, Col, Dropdown, Row } from "antd";
 import * as Yup from "yup";
-import axios from "axios";
 import dayjs from "dayjs";
 import { ChainIcon, MoreIcon } from "../../Icon";
 
@@ -103,7 +107,8 @@ const ProjectListPage = () => {
   const fetchDataProject = async () => {
     try {
       const dataProject = await getAllProject();
-      setData(dataProject.reverse());
+      const reversedData = dataProject.slice().reverse();
+      setData(reversedData);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
@@ -141,9 +146,7 @@ const ProjectListPage = () => {
         };
       } else if (modalName === "Delete") {
         try {
-          await axios.delete(
-            `http://localhost:9999/Project/${selectedProject.id}`
-          );
+          await deleteProject(selectedProject.id);
           fetchDataProject();
           toast.success("Delete Project Success");
           setOpen(false);
@@ -155,10 +158,7 @@ const ProjectListPage = () => {
       }
 
       try {
-        await axios.put(
-          `http://localhost:9999/Project/${selectedProject.id}`,
-          updatedProject
-        );
+        await updateProject(updatedProject);
         fetchDataProject();
         toast.success(`${modalName} Success`);
       } catch (error) {
@@ -289,7 +289,10 @@ const ProjectListPage = () => {
               </Col>
               <Col span={24}>
                 {formikConfirm?.values?.rounds.map((item, index) => (
-                  <Row gutter={[20, 0]} key={index}>
+                  <Row
+                    gutter={[20, 0]}
+                    key={`${item.startDate}-${item.endDate}`}
+                  >
                     <Col span={24} className="mt-4">
                       <LabelComponent label={`Investment Round ${index + 1}`} />
                     </Col>
@@ -511,8 +514,8 @@ const ProjectListPage = () => {
   const TableBody = (data: any) => {
     return (
       <>
-        {data.map((item: any, index: any) => (
-          <tr key={index}>
+        {data.map((item: any) => (
+          <tr key={item.id}>
             <td>
               <div className="project-table-style">
                 <div style={{ width: "40px", height: "40px" }}>
