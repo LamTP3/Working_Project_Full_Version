@@ -291,7 +291,7 @@ const ProjectListPage = () => {
                 {formikConfirm?.values?.rounds.map((item, index) => (
                   <Row
                     gutter={[20, 0]}
-                    key={`${item.startDate}-${item.endDate}`}
+                    key={`${index}- ${item.startDate}-${item.endDate}`}
                   >
                     <Col span={24} className="mt-4">
                       <LabelComponent label={`Investment Round ${index + 1}`} />

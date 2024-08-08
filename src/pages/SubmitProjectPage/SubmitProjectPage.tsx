@@ -85,10 +85,7 @@ const validationSchema = Yup.object({
     contact_name: Yup.string().required("Contact name required!"),
     contact_telegram_handle: Yup.string()
       .required("Telegram account required!")
-      .matches(
-        /^(?:@)?[a-zA-Z0-9_]{5,32}$/,
-        "Please enter a valid telegram account!"
-      ),
+      .matches(/^(?:@)?\w{5,32}$/, "Please enter a valid telegram account!"),
     email: Yup.string()
       .required("Email required!")
       .matches(
@@ -122,7 +119,7 @@ const validationSchema = Yup.object({
     project_twitter: Yup.string()
       .required(" Project twitter required!")
       .matches(
-        /(https:\/\/twitter.com\/(?![a-zA-Z0-9_]+\/)([a-zA-Z0-9_]+))/,
+        /(https:\/\/twitter.com\/(?!\w+\/)(\w+))/,
         "Please enter a valid twitter link!"
       ),
     project_medium: Yup.string()

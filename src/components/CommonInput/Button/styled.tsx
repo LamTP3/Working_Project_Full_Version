@@ -11,6 +11,10 @@ export const ButtonWarraper = styled.div<Props>`
       #18ff71 111.15%
     ) !important;
   }
+  .Gradient:hover {
+    box-shadow: 0 0 20px rgba(0, 63, 221, 0.5);
+  }
+
   .Gradient_Danger {
     background: linear-gradient(
       84.71deg,
@@ -18,9 +22,15 @@ export const ButtonWarraper = styled.div<Props>`
       #ff4466 111.15%
     ) !important;
   }
+  .Gradient_Danger:hover {
+    box-shadow: 0 0 20px rgba(143, 24, 24, 0.5);
+  }
 
   .Gradient_Default {
     background: var(--primary-input-bg) !important;
+  }
+  .Gradient_Default:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
   }
 
   .no-border {
