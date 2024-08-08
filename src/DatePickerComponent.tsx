@@ -15,7 +15,7 @@ const DatePickerComponent: React.FC<DatePickerComponentProps> = ({
 }) => {
   const [field, meta, helpers] = useField(name);
   const { setValue } = helpers;
-  const { setTouched } = useFormikContext();
+  // const { setTouched } = useFormikContext();
   const { setFieldTouched } = useFormikContext();
   const handleChange = (value: any) => {
     setValue(value ? dayjs(value).format("YYYY-MM-DD") : "");

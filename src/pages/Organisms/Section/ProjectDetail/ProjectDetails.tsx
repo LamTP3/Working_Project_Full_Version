@@ -14,7 +14,7 @@ interface ProjectDetailProps {
 const ProjectDetails: React.FC<ProjectDetailProps> = ({ formik }) => {
   const handleTagChange = (selectedTags: string[]) => {
     const formattedTags = selectedTags.map((tag) => ({
-      tag_name: tag, // Hoặc bạn có thể ánh xạ thêm nếu cần
+      tag_name: tag,
       tag_value: tag,
     }));
     formik.setFieldValue("project_detail.tags", formattedTags);
@@ -30,7 +30,6 @@ const ProjectDetails: React.FC<ProjectDetailProps> = ({ formik }) => {
               </div>
               <div className="mt-[8px]">
                 <DatePickerComponent
-                  name="project_detail.start_date"
                   placeholder="estimate"
                   disabled={false}
                   value={
@@ -38,34 +37,19 @@ const ProjectDetails: React.FC<ProjectDetailProps> = ({ formik }) => {
                       ? dayjs(formik.values.project_detail.start_date)
                       : null
                   }
-                  onChange={(date) => {
-                    if (date) {
-                      const formattedDate = date.format("MM/DD/YYYY HH:mm");
-                      console.log(formattedDate);
-                      formik.setFieldValue(
-                        "project_detail.start_date",
-                        formattedDate
-                      );
-                    } else {
-                      formik.setFieldValue("project_detail.start_date", "");
-                    }
-                  }}
-                  onBlur={() => {
-                    formik.setTouched({
-                      ...formik.touched,
-                      project_detail: {
-                        ...formik.touched.project_detail,
-                        start_date: true,
-                      },
-                    });
-                  }}
+                  formik={formik}
+                  fieldName="project_detail.start_date"
                 />
-                {formik.touched.project_detail?.start_date &&
-                formik.errors.project_detail?.start_date ? (
-                  <div className="text-red-600">
-                    {formik.errors.project_detail.start_date}
-                  </div>
-                ) : null}
+                <div className="text-red-600">
+                  {formik.errors.project_detail?.start_date
+                    ? "error"
+                    : "no error"}
+                </div>
+                <div className="text-red-600">
+                  {formik.touched.project_detail?.start_date
+                    ? "touched"
+                    : "dont touch"}
+                </div>
               </div>
             </Col>
           </Row>
@@ -79,11 +63,8 @@ const ProjectDetails: React.FC<ProjectDetailProps> = ({ formik }) => {
               <MultipleSelect
                 value={formik.values.project_detail.tags.map(
                   (tag) => tag.tag_name
-                )} // Hiển thị tag_name
-                onChange={handleTagChange} // Cập nhật giá trị trong Formik
-                // onChange={(value) => {
-                //   console.log(value);
-                // }}
+                )}
+                onChange={handleTagChange}
               />
             </div>
           </div>

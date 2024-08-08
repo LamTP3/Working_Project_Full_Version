@@ -8,20 +8,18 @@ const ModalComponents: React.FC<ModalProps> = ({
   handleCancel,
   getTitle,
   getContent,
-  getFooter
+  getFooter,
 }) => {
   return (
-    <>
-      <Modal
-        open={open}
-        title={getTitle()}
-        centered
-        onCancel={handleCancel}
-        footer={getFooter()}
-      >
-        {getContent()}
-      </Modal>
-    </>
+    <Modal
+      open={open}
+      title={getTitle()}
+      centered
+      onCancel={handleCancel}
+      footer={getFooter()}
+    >
+      {getContent()}
+    </Modal>
   );
 };
 

@@ -292,7 +292,8 @@ const ProjectListPage = () => {
                     </Col>
                     <Col span={12} className="mt-3">
                       <DatePickerComponent
-                        name={`rounds.${index}.startDate`}
+                        formik={formikConfirm}
+                        fieldName={`rounds.${index}.startDate`}
                         disabled={false}
                         width="100%"
                         value={
@@ -302,36 +303,6 @@ const ProjectListPage = () => {
                               )
                             : null
                         }
-                        onChange={(date) => {
-                          if (date) {
-                            const formattedDate =
-                              date.format("MM/DD/YYYY HH:mm");
-                            console.log(formattedDate);
-                            formikConfirm.setFieldValue(
-                              `rounds.${index}.startDate`,
-                              formattedDate
-                            );
-                          } else {
-                            formikConfirm.setFieldValue(
-                              `rounds.${index}.startDate`,
-                              ""
-                            );
-                          }
-                        }}
-                        onBlur={() => {
-                          const touchedRounds = formikConfirm.touched.rounds
-                            ? [...formikConfirm.touched.rounds]
-                            : [];
-                          if (!touchedRounds[index]) {
-                            touchedRounds[index] = {};
-                          }
-                          touchedRounds[index].startDate = true;
-
-                          formikConfirm.setTouched({
-                            ...formikConfirm.touched,
-                            rounds: touchedRounds,
-                          });
-                        }}
                         maxDate={dayjs(item.endDate).subtract(1, "day")}
                         key={`startDate-${index}`}
                       />
@@ -353,36 +324,8 @@ const ProjectListPage = () => {
                             ? dayjs(formikConfirm.values.rounds[index].endDate)
                             : null
                         }
-                        onChange={(date) => {
-                          if (date) {
-                            const formattedDate =
-                              date.format("MM/DD/YYYY HH:mm");
-                            console.log(formattedDate);
-                            formikConfirm.setFieldValue(
-                              `rounds.${index}.endDate`,
-                              formattedDate
-                            );
-                          } else {
-                            formikConfirm.setFieldValue(
-                              `rounds.${index}.endDate`,
-                              ""
-                            );
-                          }
-                        }}
-                        onBlur={() => {
-                          const touchedRounds = formikConfirm.touched.rounds
-                            ? [...formikConfirm.touched.rounds]
-                            : [];
-                          if (!touchedRounds[index]) {
-                            touchedRounds[index] = {};
-                          }
-                          touchedRounds[index].endDate = true;
-
-                          formikConfirm.setTouched({
-                            ...formikConfirm.touched,
-                            rounds: touchedRounds,
-                          });
-                        }}
+                        formik={formikConfirm}
+                        fieldName={`rounds.${index}.endDate`}
                         minDate={dayjs(item.startDate).add(1, "days")}
                         key={`endDate-${index}`}
                       />

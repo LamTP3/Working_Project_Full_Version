@@ -17,23 +17,15 @@ const PaginationComponent: React.FC<PaginationComponentProps> = ({
   onChange,
 }) => {
   const itemRender = (
-    _: number, // Sử dụng "_" để chỉ ra rằng biến này không được sử dụng
+    _: number,
     type: "page" | "prev" | "next" | "jump-prev" | "jump-next",
     originalElement: React.ReactNode
   ) => {
     if (type === "prev") {
-      return (
-        <>
-          <NextAnPrevIcon name="prev" />
-        </>
-      );
+      return <NextAnPrevIcon name="prev" />;
     }
     if (type === "next") {
-      return (
-        <>
-          <NextAnPrevIcon name="next" />
-        </>
-      );
+      return <NextAnPrevIcon name="next" />;
     }
 
     return originalElement;
