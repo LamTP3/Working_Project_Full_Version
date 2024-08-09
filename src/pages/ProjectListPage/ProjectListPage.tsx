@@ -299,7 +299,7 @@ const ProjectListPage = () => {
                     <Col span={12} className="mt-3">
                       <DatePickerComponent
                         formik={formikConfirm}
-                        fieldName={`rounds${index}.startDate`}
+                        fieldName={`rounds.${index}.startDate`}
                         disabled={false}
                         width="100%"
                         value={
@@ -330,7 +330,7 @@ const ProjectListPage = () => {
                             : null
                         }
                         formik={formikConfirm}
-                        fieldName={`rounds${index}.endDate`}
+                        fieldName={`rounds.${index}.endDate`}
                         minDate={dayjs(item.startDate).add(1, "days")}
                       />
 
