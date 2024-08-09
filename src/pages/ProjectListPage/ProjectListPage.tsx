@@ -28,7 +28,7 @@ import { Button, Col, Dropdown, Row } from "antd";
 import * as Yup from "yup";
 import dayjs from "dayjs";
 import { ChainIcon, MoreIcon } from "../../Icon";
-
+import "./ProjectListPage.scss";
 interface Round {
   startDate: string;
   endDate: string;
@@ -620,7 +620,7 @@ const ProjectListPage = () => {
         />
       </div>
       <div className="flex justify-between mt-[30px]">
-        <h1 className="text-2xl font-bold text-white">Project List</h1>
+        <h1 className="font__style">Project List</h1>
         <div className="max-w-[250px]">
           <SearchComp placeholder="Search project" />
         </div>
