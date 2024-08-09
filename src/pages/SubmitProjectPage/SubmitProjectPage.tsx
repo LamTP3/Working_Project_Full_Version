@@ -202,76 +202,78 @@ const SubmitProjectPage = () => {
   };
 
   return (
-    <div className="lg:mx-[200px] my-[50px] mx-[50px]">
-      <div className="mb-12">
-        <Header />
+    <div className="w-full xl:max-w-[1000px] md:max-w-[600px] sm:max-w-[350px] mx-auto">
+      <div className="mx-[40px] my-[40px]">
+        <div className="mb-12">
+          <Header />
+        </div>
+
+        <form onSubmit={handleSubmit}>
+          <div className="mt-5">
+            <CollapseComponent
+              title="Basic Information"
+              child={<BasicInformation formik={formik} />}
+              active
+            />
+          </div>
+
+          <div className="mt-5">
+            <CollapseComponent
+              title="Project Details"
+              child={<ProjectDetails formik={formik} />}
+              active
+            />
+          </div>
+
+          <div className="mt-5">
+            <CollapseComponent
+              title="Links"
+              child={<Links formik={formik} />}
+              active
+            />
+          </div>
+
+          <div className="mt-5">
+            <CollapseComponent
+              title="Token Information"
+              child={<TokenInformation formik={formik} />}
+              active
+            />
+          </div>
+          <div className="mt-5">
+            <CollapseComponent
+              title="Capital"
+              child={<Capital formik={formik} />}
+              active
+            />
+          </div>
+          <div className="mt-5">
+            <CollapseComponent
+              title="Public Token Sale"
+              child={<PublicTokenSale formik={formik} />}
+              active
+            />
+          </div>
+          <div className="mt-5">
+            <CollapseComponent
+              title="Status of Partnerships"
+              child={<StatusOfPartnerships formik={formik} />}
+              active
+            />
+          </div>
+          <div className="mt-5">
+            <Captcha onCaptchaChange={setCaptchaValue} />
+          </div>
+          <div className="mt-5">
+            <ButtonComponent
+              htmlType="submit"
+              button_content="Submit Information"
+              arrow_icon={true}
+              background_color="Gradient"
+            />
+          </div>
+        </form>
       </div>
-
-      <form onSubmit={handleSubmit}>
-        <div className="mt-5">
-          <CollapseComponent
-            title="Basic Information"
-            child={<BasicInformation formik={formik} />}
-            active
-          />
-        </div>
-
-        <div className="mt-5">
-          <CollapseComponent
-            title="Project Details"
-            child={<ProjectDetails formik={formik} />}
-            active
-          />
-        </div>
-
-        <div className="mt-5">
-          <CollapseComponent
-            title="Links"
-            child={<Links formik={formik} />}
-            active
-          />
-        </div>
-
-        <div className="mt-5">
-          <CollapseComponent
-            title="Token Information"
-            child={<TokenInformation formik={formik} />}
-            active
-          />
-        </div>
-        <div className="mt-5">
-          <CollapseComponent
-            title="Capital"
-            child={<Capital formik={formik} />}
-            active
-          />
-        </div>
-        <div className="mt-5">
-          <CollapseComponent
-            title="Public Token Sale"
-            child={<PublicTokenSale formik={formik} />}
-            active
-          />
-        </div>
-        <div className="mt-5">
-          <CollapseComponent
-            title="Status of Partnerships"
-            child={<StatusOfPartnerships formik={formik} />}
-            active
-          />
-        </div>
-        <div className="mt-5">
-          <Captcha onCaptchaChange={setCaptchaValue} />
-        </div>
-        <div className="mt-5">
-          <ButtonComponent
-            htmlType="submit"
-            button_content="Submit Information"
-            arrow_icon={true}
-            background_color="Gradient"
-          />
-        </div>
-      </form>
     </div>
   );
 };

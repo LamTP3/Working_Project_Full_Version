@@ -41,4 +41,16 @@ export const Warraper = styled.div`
   .ant-collapse-content-box {
     padding: 16px 0px !important;
   }
+
+  @media (max-width: 600px) {
+    .header-style{
+      gap: 10px;
+    }
+  }
+
+  @media (max-width: 400px) {
+    .header-style{
+      gap: inherit;
+    }
+  }
 `;
