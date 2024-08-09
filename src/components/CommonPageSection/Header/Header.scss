@@ -5,16 +5,19 @@
   top: 0;
   position: sticky;
   z-index: 2;
+
   .header-inner {
     display: flex;
     align-items: center;
     padding: 0px 122px 0px 122px;
     gap: 40px;
     white-space: nowrap;
+
     .header-left {
       display: flex;
       align-items: center;
       gap: 10px;
+      font-family: var(--font-family);
 
       .header-logo-text {
         font-weight: 700;
@@ -22,10 +25,15 @@
         line-height: 29.05px;
       }
     }
+
     .header-mid {
+      font-family: var(--font-family);
       width: 100%;
       font-weight: 500;
+      font-size: 16px;
+      line-height: 19.36px;
     }
+
     .header-right {
       display: flex;
       align-items: center;
@@ -36,10 +44,12 @@
         gap: 5px;
 
         .header-text {
+          font-family: var(--font-family);
           &-welcome {
             font-weight: 400;
             color: var(--grey-color);
           }
+
           &-name {
             font-weight: 500;
           }
@@ -47,6 +57,9 @@
       }
 
       .header-logout-btn {
+        font-family: var(--font-family);
+        font-weight: 500;
+        font-size: 16px;
         color: var(--grey-color);
         padding: 10px 24px 10px 24px;
         border-radius: 100px;
@@ -55,7 +68,6 @@
     }
   }
 }
-
 
 /* Media Queries for Responsive Design */
 @media (max-width: 1024px) {
@@ -74,7 +86,6 @@
 }
 
 @media (max-width: 768px) {
-
   .header-inner {
     flex-direction: column;
     align-items: flex-start;

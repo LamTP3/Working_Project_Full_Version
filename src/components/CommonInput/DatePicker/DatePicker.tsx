@@ -4,16 +4,18 @@ import { DatePickerWarraper } from "./styled";
 import { DateIcon } from "../../../Icon";
 import { CloseOutlined } from "@ant-design/icons";
 import { DATE_FORMAT } from "../../../helper/contant";
-import dayjs from "dayjs";
+import dayjs, { Dayjs } from "dayjs";
 import { FormikProps } from "formik";
+
 interface DatePickerFormikProps extends DatePickerProps {
   formik?: FormikProps<any>;
   fieldName: string;
+  dateValue?: string;
 }
 const DatePickerComponent: React.FC<DatePickerFormikProps> = (props) => {
-  const { disabled, placeholder, value, formik, fieldName, ...rest } = props;
-
-  const handleChange = (date: any) => {
+  const { disabled, placeholder, dateValue, fieldName, formik, ...rest } =
+    props;
+  const handleChange = (date: Dayjs) => {
     if (date) {
       const formattedDate = date.format("MM/DD/YYYY HH:mm");
       formik?.setFieldValue(fieldName, formattedDate);
@@ -29,10 +31,10 @@ const DatePickerComponent: React.FC<DatePickerFormikProps> = (props) => {
     <DatePickerWarraper $disabled={disabled}>
       <DatePicker
         showTime
-        placeholder={placeholder ?? "MM/dd/yyyy HH:mm"}
+        placeholder={placeholder ?? DATE_FORMAT}
         suffixIcon={<DateIcon />}
         format={DATE_FORMAT}
-        value={value ? dayjs(value) : null}
+        value={dateValue ? dayjs(dateValue) : null}
         onBlur={handleBlur}
         onChange={handleChange}
         allowClear={{ clearIcon: <CloseOutlined /> }}

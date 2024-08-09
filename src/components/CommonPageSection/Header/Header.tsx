@@ -14,14 +14,14 @@ const Header = () => {
           <Link className="mr-3 cursor-pointer" to={ROUTER.PROJECT_LIST}>
             Projects
           </Link>
-          <Link className="mr-3cursor-pointer" to={ROUTER.SUBMIT_PROJECT}>
+          <Link className="ml-3 cursor-pointer" to={ROUTER.SUBMIT_PROJECT}>
             Add Project
           </Link>
         </div>
         <div className="header-right">
           <div className="header-welcome">
-            <p className="header-text-welcome">Welcome</p>
-            <p className="header-text-name"> Admin!</p>
+            <p className="header-text header-text-welcome">Welcome</p>
+            <p className="header-text header-text-name"> Admin !</p>
           </div>
           <button className="header-logout-btn">logout</button>
         </div>

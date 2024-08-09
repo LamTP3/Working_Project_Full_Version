@@ -40,6 +40,27 @@ const ProjectDetails: React.FC<ProjectDetailProps> = ({ formik }) => {
                       : null
                   }
                   formik={formik}
+                  onChange={(date) => {
+                    if (date) {
+                      const formattedDate = date.format("MM/DD/YYYY HH:mm");
+                      console.log(formattedDate);
+                      formik.setFieldValue(
+                        "project_detail.start_date",
+                        formattedDate
+                      );
+                    } else {
+                      formik.setFieldValue("project_detail.start_date", "");
+                    }
+                  }}
+                  onBlur={() => {
+                    formik.setTouched({
+                      ...formik.touched,
+                      project_detail: {
+                        ...formik.touched.project_detail,
+                        start_date: true,
+                      },
+                    });
+                  }}
                   fieldName="project_detail.start_date"
                 />
               </div>

@@ -4,7 +4,6 @@ import { FormikProps } from "formik";
 import { CheckboxComponent, DatePickerComponent } from "../../../../components";
 
 import { Project } from "../../../../type/type";
-import dayjs from "dayjs";
 
 interface CapitalProps {
   formik: FormikProps<Project>;
@@ -49,26 +48,19 @@ const Capital: React.FC<CapitalProps> = ({ formik }) => {
             >
               <Col span={12}>
                 <DatePickerComponent
-                  fieldName={`capital.rounds[${index}].startDate`}
                   formik={formik}
+                  fieldName={`capital.rounds[${index}].startDate`}
+                  dateValue={formik.values.capital.rounds[index]?.startDate}
                   disabled={!checkedOptions.includes(option.value)}
-                  value={
-                    formik.values.capital.rounds[index]?.startDate
-                      ? dayjs(formik.values.capital.rounds[index].startDate)
-                      : null
-                  }
                 />
               </Col>
+
               <Col span={12}>
                 <DatePickerComponent
                   fieldName={`capital.rounds[${index}].endDate`}
                   formik={formik}
+                  dateValue={formik.values.capital.rounds[index]?.endDate}
                   disabled={!checkedOptions.includes(option.value)}
-                  value={
-                    formik.values.capital.rounds[index]?.endDate
-                      ? dayjs(formik.values.capital.rounds[index].endDate)
-                      : null
-                  }
                 />
               </Col>
             </Row>

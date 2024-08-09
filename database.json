@@ -452,8 +452,8 @@
         "1",
         "2"
       ],
-      "statusId": 1,
-      "reject_reason": ""
+      "statusId": 2,
+      "reject_reason": "Test"
     }
   ],
   "Project_Status": [

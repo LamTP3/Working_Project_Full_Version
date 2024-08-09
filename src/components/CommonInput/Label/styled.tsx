@@ -6,7 +6,7 @@ type Props = {
 export const Warraper = styled.div<Props>`
   .label-color {
     color: var(--text-color);
-    font-family: Inter, sans-serif;
+    font-family: var(--font-family);
     font-size: 16px;
     font-weight: 500;
     line-height: 19.36px;

@@ -1,42 +1,43 @@
-.tabs-custom{
-    .ant-tabs-nav::before{
+.tabs-custom {
+  .ant-tabs-nav::before {
+    border: none !important;
+  }
+  .ant-tabs-nav-wrap {
+    background: var(--primary-input-bg);
+    border-radius: 5px;
+    .ant-tabs-tab {
+      background: var(--primary-input-bg);
+      font-family: var(--font-family);
+      color: var(--gray-color);
+      font-size: 16px;
+      font-weight: 600;
+      margin: 0;
+      padding: 12px 32px 12px 32px;
+
+      &:first-child {
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+      }
+
+      &:nth-last-child(2) {
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+      }
+
+      &::before {
         border: none !important;
+      }
     }
-    .ant-tabs-nav-wrap{
-        background: var(--primary-input-bg);
-        border-radius: 5px;
-        .ant-tabs-tab{
-            background: var(--primary-input-bg);
-            color: var(--gray-color);
-            font-size: 16px;
-            font-weight: 600;
-            margin: 0;
-            padding: 12px 32px 12px 32px;
 
-            &:first-child {
-                border-top-left-radius: 5px;
-                border-bottom-left-radius: 5px;
-            }
-
-            &:nth-last-child(2) {
-                border-top-right-radius: 5px;
-                border-bottom-right-radius: 5px;
-            }
-
-            &::before{
-                border: none !important;
-            }
-        }
-
-        .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn{
-            color: var(--white-color);
-        }
-
-        .ant-tabs-ink-bar{
-            height: 5px;
-            border-radius: 3px;
-            background: linear-gradient(84.71deg, #003FDD -11.67%, #18FF71 111.15%);
-            transition: all 0.3s;
-        }
+    .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+      color: var(--white-color);
     }
+
+    .ant-tabs-ink-bar {
+      height: 5px;
+      border-radius: 3px;
+      background: linear-gradient(84.71deg, #003fdd -11.67%, #18ff71 111.15%);
+      transition: all 0.3s;
+    }
+  }
 }

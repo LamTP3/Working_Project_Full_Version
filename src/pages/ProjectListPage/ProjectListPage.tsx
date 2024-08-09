@@ -29,10 +29,6 @@ import * as Yup from "yup";
 import dayjs from "dayjs";
 import { ChainIcon, MoreIcon } from "../../Icon";
 import "./ProjectListPage.scss";
-interface Round {
-  startDate: string;
-  endDate: string;
-}
 
 interface ConfirmFormValues {
   rounds: { startDate: string; endDate: string }[];
@@ -51,7 +47,6 @@ const ProjectListPage = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [pageSize, setPageSize] = useState(10);
   const [activeTab, setActiveTab] = useState("1");
-  const [rounds, setRounds] = useState<Round[]>([]);
   const navigate = useNavigate();
 
   const initialValuesReject: RejectFormValues = {
@@ -72,10 +67,7 @@ const ProjectListPage = () => {
   });
 
   const initialValuesConfirm: ConfirmFormValues = {
-    rounds: rounds.map((round) => ({
-      startDate: round.startDate,
-      endDate: round.endDate,
-    })),
+    rounds: [],
   };
 
   const validationSchemaConfirm = Yup.object({
@@ -94,13 +86,20 @@ const ProjectListPage = () => {
       console.log("Submit value: ", value);
       handleOk(value.rounds);
     },
-    enableReinitialize: true,
   });
 
   useEffect(() => {
     if (selectedProject) {
       const projectRounds = selectedProject.capital.rounds || [];
-      setRounds(projectRounds);
+      formikConfirm.setValues((prevValues) => ({
+        rounds:
+          prevValues.rounds.length === 0
+            ? projectRounds.map((round) => ({
+                startDate: round.startDate,
+                endDate: round.endDate,
+              }))
+            : prevValues.rounds,
+      }));
     }
   }, [selectedProject]);
 
@@ -300,8 +299,6 @@ const ProjectListPage = () => {
                       <DatePickerComponent
                         formik={formikConfirm}
                         fieldName={`rounds.${index}.startDate`}
-                        disabled={false}
-                        width="100%"
                         value={
                           formikConfirm?.values?.rounds[index]?.startDate
                             ? dayjs(
@@ -309,6 +306,8 @@ const ProjectListPage = () => {
                               )
                             : null
                         }
+                        disabled={false}
+                        width="100%"
                         maxDate={dayjs(item.endDate).subtract(1, "day")}
                       />
                       {formikConfirm.touched.rounds?.[index]?.startDate &&
@@ -322,15 +321,12 @@ const ProjectListPage = () => {
                     </Col>
                     <Col span={12} className="mt-3">
                       <DatePickerComponent
+                        fieldName={`rounds.${index}.endDate`}
+                        dateValue={
+                          formikConfirm?.values?.rounds[index]?.endDate
+                        }
                         disabled={false}
                         width="100%"
-                        value={
-                          formikConfirm?.values?.rounds[index]?.endDate
-                            ? dayjs(formikConfirm.values.rounds[index].endDate)
-                            : null
-                        }
-                        formik={formikConfirm}
-                        fieldName={`rounds.${index}.endDate`}
                         minDate={dayjs(item.startDate).add(1, "days")}
                       />
 

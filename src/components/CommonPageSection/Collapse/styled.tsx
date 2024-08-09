@@ -9,7 +9,7 @@ export const Warraper = styled.div`
       font-size: 24px;
       font-weight: 700;
       line-height: 29.05px;
-      font-family: Inter, sans-serif;
+      font-family: var(--font-family);
     }
   }
   .ant-collapse-content {
@@ -43,13 +43,13 @@ export const Warraper = styled.div`
   }
 
   @media (max-width: 600px) {
-    .header-style{
+    .header-style {
       gap: 10px;
     }
   }
 
   @media (max-width: 400px) {
-    .header-style{
+    .header-style {
       gap: inherit;
     }
   }
