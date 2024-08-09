@@ -4,9 +4,7 @@ import "../InputComp.scss";
 import React from "react";
 const { TextArea } = Input;
 
-interface TextAreaCompProp extends TextAreaProps {}
-
-const TextAreaComp: React.FC<TextAreaCompProp> = (props) => {
+const TextAreaComp: React.FC<TextAreaProps> = (props) => {
   return <TextArea {...props} className="textarea-custom" rows={4} />;
 };
 

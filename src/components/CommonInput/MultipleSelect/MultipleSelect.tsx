@@ -1,41 +1,16 @@
 import React, { useEffect, useState } from "react";
-import { Select, SelectProps } from "antd";
-import axios from "axios";
+import { Select } from "antd";
 import { MultipleSelectWarraper } from "./styled";
+import { OptionType, MultipleSelectProps } from "../CommonInputType";
+import { getProjecTag } from "../../../service/service";
 
-// Định nghĩa kiểu dữ liệu
-type OptionType = {
-  label: string;
-  value: string;
-};
-
-// Hàm lấy dữ liệu
-const fetchData = async (): Promise<OptionType[]> => {
-  try {
-    const response = await axios.get("http://localhost:9999/Project_Tag");
-    return response.data.map((item: OptionType) => ({
-      label: item.label,
-      value: item.value,
-    }));
-  } catch (error) {
-    console.error("Error fetching options:", error);
-    return [];
-  }
-};
-
-interface MultipleSelectProps extends SelectProps<string[]> {
-  value?: string[];
-  onChange?: (value: string[]) => void;
-  onBlur?: () => void;
-}
-
-const MultipleSelect: React.FC<MultipleSelectProps> = ({
-  value,
-  disabled,
-  onChange,
-  onBlur,
-  ...props
-}) => {
+const MultipleSelect: React.FC<MultipleSelectProps> = (props) => {
+  /** OPTIONAL PARAMS
+   * @param {Array} value       - dùng để chọn những option đã chọn
+   * @param {function} onChange - dùng để chọn options
+   * @param {boolean} disabled  - dùng để disable select
+   */
+  const { value, disabled, onChange, ...rest } = props;
   const [options, setOptions] = useState<OptionType[]>([]);
 
   useEffect(() => {
@@ -47,6 +22,19 @@ const MultipleSelect: React.FC<MultipleSelectProps> = ({
     getOptions();
   }, []);
 
+  const fetchData = async (): Promise<OptionType[]> => {
+    try {
+      const response = await getProjecTag();
+      return response.map((item: OptionType) => ({
+        label: item.label,
+        value: item.value,
+      }));
+    } catch (error) {
+      console.error("Error fetching options:", error);
+      return [];
+    }
+  };
+
   return (
     <MultipleSelectWarraper $disabled={disabled}>
       <Select
@@ -57,8 +45,7 @@ const MultipleSelect: React.FC<MultipleSelectProps> = ({
         options={options}
         value={value}
         disabled={disabled}
-        onBlur={onBlur}
-        {...props}
+        {...rest}
       />
     </MultipleSelectWarraper>
   );

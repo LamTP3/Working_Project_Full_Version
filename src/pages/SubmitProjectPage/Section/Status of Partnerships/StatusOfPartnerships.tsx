@@ -3,8 +3,8 @@ import React, { useState } from "react";
 import { CheckboxComponent } from "../../../../components";
 
 import { FormikProps } from "formik";
-import { Project } from "../../../../type/type";
-import "./StatusOfPartnerships.scss"
+import { Project } from "../../../../types/type";
+import "./StatusOfPartnerships.scss";
 
 interface StatusOfPartnershipsProps {
   formik: FormikProps<Project>;

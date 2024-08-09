@@ -10,14 +10,14 @@ import {
   ModalComponents,
   TextAreaComp,
 } from "../../components";
-import { ModalName } from "../../components/CommonPageSection/Modal/ModalType";
+import { ModalName } from "../../components/CommonPageSection/SectionType";
 import {
   getAllProject,
   getAllProjectStatus,
   deleteProject,
   updateProject,
 } from "../../service/service";
-import { Project, Project_Status } from "../../type/type";
+import { Project, Project_Status } from "../../types/type";
 import { formatPrice } from "../../helper/util";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router";
@@ -29,14 +29,7 @@ import * as Yup from "yup";
 import dayjs from "dayjs";
 import { ChainIcon, MoreIcon } from "../../Icon";
 import "./ProjectListPage.scss";
-
-interface ConfirmFormValues {
-  rounds: { startDate: string; endDate: string }[];
-}
-
-interface RejectFormValues {
-  rejectReason: string;
-}
+import { ConfirmFormValues, RejectFormValues } from "./type";
 
 const ProjectListPage = () => {
   const [data, setData] = useState<Project[]>([]);
@@ -509,7 +502,7 @@ const ProjectListPage = () => {
 
   const TableBody = (data: any) => {
     return (
-      <div>
+      <>
         {data.map((item: any) => (
           <tr key={item.id}>
             <td>
@@ -558,7 +551,7 @@ const ProjectListPage = () => {
             </td>
           </tr>
         ))}
-      </div>
+      </>
     );
   };
 
@@ -634,7 +627,6 @@ const ProjectListPage = () => {
         getTitle={getTitle}
         getContent={getContent}
         getFooter={getFooter}
-        data={selectedProject}
       />
     </div>
   );

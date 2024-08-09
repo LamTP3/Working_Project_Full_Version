@@ -3,7 +3,7 @@ import { Col, Row } from "antd";
 import { FormikProps } from "formik";
 import { CheckboxComponent, DatePickerComponent } from "../../../../components";
 
-import { Project } from "../../../../type/type";
+import { Project } from "../../../../types/type";
 
 interface CapitalProps {
   formik: FormikProps<Project>;

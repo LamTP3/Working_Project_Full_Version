@@ -1,18 +1,26 @@
-import { InputNumber, InputNumberProps } from "antd"
-import "./InputNumberComp.scss"
+import { InputNumber } from "antd";
+import "./InputNumberComp.scss";
+import { InterNumberCompProp } from "../../CommonInputType";
 
-interface InterNumberCompProp extends InputNumberProps {
-  unit?: string
-}
-
-const InputNumberComp: React.FC<InterNumberCompProp> = ({ unit, ...props }) => {
-  const unitStyle = unit ? { '--unit-content': `"${unit}"` } as React.CSSProperties : {};
+const InputNumberComp: React.FC<InterNumberCompProp> = (props) => {
+  /** OPTIONS PARAMETER
+   * @@param {string} unit - có tác dụng hiện kí tự như % ở trong input number
+   */
+  const { unit, ...rest } = props;
+  const unitStyle = unit
+    ? ({ "--unit-content": `"${unit}"` } as React.CSSProperties)
+    : {};
 
   return (
     <div className="inputnumber-container">
-      <InputNumber {...props} style={unitStyle} className='inputnumber-custom' placeholder="0.00" />
+      <InputNumber
+        {...rest}
+        style={unitStyle}
+        className="inputnumber-custom"
+        placeholder="0.00"
+      />
     </div>
-  )
-}
+  );
+};
 
-export default InputNumberComp
+export default InputNumberComp;

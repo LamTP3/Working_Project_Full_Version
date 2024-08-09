@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 type Props = {
-  $circle: boolean;
+  $circle?: boolean;
   $heightElement?: boolean;
   $disabled?: boolean;
 };

@@ -1,13 +1,11 @@
 import React from "react";
-import SubmitProjectPage from "./pages/SubmitProjectPage/SubmitProjectPage";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { ToastContainer, Bounce } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Header from "./components/CommonPageSection/Header/Header";
 import { Outlet } from "react-router";
-import ProjectListPage from "./pages/ProjectListPage/ProjectListPage";
-import ProjectDetail from "./pages/ProjectDetailPage/DetailPage";
 import { ROUTER } from "./helper/contant";
+import { ProjectListPage, SubmitProjectPage, DetailProjectPage } from "./pages";
 const Layout = () => {
   return (
     <div>
@@ -47,7 +45,7 @@ const App: React.FC = () => {
         },
         {
           path: ROUTER.PROJECT_DETAIL,
-          element: <ProjectDetail />,
+          element: <DetailProjectPage />,
         },
       ],
     },

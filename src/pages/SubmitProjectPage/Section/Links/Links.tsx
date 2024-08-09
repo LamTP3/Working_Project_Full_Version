@@ -6,7 +6,7 @@ import {
 } from "../../../../components";
 
 import { FormikProps } from "formik";
-import { Project } from "../../../../type/type";
+import { Project } from "../../../../types/type";
 import React from "react";
 
 interface LinkProps {

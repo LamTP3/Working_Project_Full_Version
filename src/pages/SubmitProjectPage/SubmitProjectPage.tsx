@@ -15,7 +15,7 @@ import {
 } from "./Section";
 
 import { useFormik, FormikProps } from "formik";
-import { Project } from "../../type/type";
+import { Project } from "../../types/type";
 import { toast } from "react-toastify";
 import { postNewProject } from "../../service/service";
 import { useNavigate } from "react-router";

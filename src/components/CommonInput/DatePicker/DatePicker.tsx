@@ -1,32 +1,46 @@
 import React from "react";
-import { DatePicker, DatePickerProps } from "antd";
+import { DatePicker } from "antd";
 import { DatePickerWarraper } from "./styled";
 import { DateIcon } from "../../../Icon";
 import { CloseOutlined } from "@ant-design/icons";
 import { DATE_FORMAT } from "../../../helper/contant";
 import dayjs, { Dayjs } from "dayjs";
-import { FormikProps } from "formik";
+import { DatePickerFormikProps } from "../CommonInputType";
 
-interface DatePickerFormikProps extends DatePickerProps {
-  formik?: FormikProps<any>;
-  fieldName: string;
-  dateValue?: string;
-}
 const DatePickerComponent: React.FC<DatePickerFormikProps> = (props) => {
+  /** OPTIONAL PARAMS
+   *  @param {boolean} disabled   - dùng để vô hiệu hóa việc nhập date
+   *  @param {string} placeholder - dùng để thay đổi placeholder cho datepicker
+   *  @param {string} dateValue   - dùng để thay đổi date hien thi trong datepicker
+   *  @param {string} fieldName   - dùng để thay đổi name cho input
+   *  @param {any} formik         - là props của Formik
+   */
   const { disabled, placeholder, dateValue, fieldName, formik, ...rest } =
     props;
+  const name = fieldName ?? "";
+
+  /** FUNCTIONS: handleChage
+   * @param  {Dayjs }date         - dùng để thay đổi date thành string để lưu giá trị với formik
+   */
   const handleChange = (date: Dayjs) => {
+    console.log("date: ", date);
     if (date) {
-      const formattedDate = date.format("MM/DD/YYYY HH:mm");
-      formik?.setFieldValue(fieldName, formattedDate);
+      const formattedDate = date.format(DATE_FORMAT);
+      console.log("formattedDate: ", formattedDate);
+
+      formik?.setFieldValue(name, formattedDate);
     } else {
-      formik?.setFieldValue(fieldName, "");
+      formik?.setFieldValue(name, "");
     }
   };
 
+  /** FUNCTIONS: handleBlur
+   * có tác dụng bắt sự kiện  đã click vào datepicker
+   */
   const handleBlur = () => {
-    formik?.setFieldTouched(fieldName, true);
+    formik?.setFieldTouched(name, true);
   };
+
   return (
     <DatePickerWarraper $disabled={disabled}>
       <DatePicker

@@ -8,7 +8,7 @@ import {
 } from "../../../../components";
 
 import { FormikProps } from "formik";
-import { Project } from "../../../../type/type";
+import { Project } from "../../../../types/type";
 import React from "react";
 
 interface TokenInformationProps {
@@ -107,7 +107,11 @@ const TokenInformation: React.FC<TokenInformationProps> = ({ formik }) => {
         </Col>
         <LabelComponent label="Tokenomics *" />
         {formik.values.token_information.tokennomics.map((item, index) => (
-          <Col key={index} className="gutter-row mb-[15px] mt-2" span={24}>
+          <Col
+            key={item.tokennomics_value}
+            className="gutter-row mb-[15px] mt-2"
+            span={24}
+          >
             <Row>
               <Col className="gutter-row flex gap-5" span={24}>
                 <div className="w-full">

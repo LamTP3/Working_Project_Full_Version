@@ -1,6 +1,5 @@
 import { Col, Row } from "antd";
 import { CheckboxComponent, DatePickerComponent } from "../../../../components";
-import dayjs from "dayjs";
 
 interface Props {
   data: any;
@@ -46,14 +45,14 @@ const Capital = ({ data }: Props) => {
                 <DatePickerComponent
                   fieldName="startDate"
                   disabled
-                  value={dayjs(item.startDate)}
+                  dateValue={item.startDate}
                 />
               </Col>
               <Col span={12}>
                 <DatePickerComponent
                   fieldName="endDate"
                   disabled
-                  value={dayjs(item.endDate)}
+                  dateValue={item.endDate}
                 />
               </Col>
             </Row>

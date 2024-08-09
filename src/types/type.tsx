@@ -1,3 +1,6 @@
+/**
+ * type "Project" for submit project form
+ */
 export interface Project {
   id?: string;
   basic_information: BasicInformationValues;
@@ -11,6 +14,9 @@ export interface Project {
   reject_reason: string;
 }
 
+/**
+ * type "BasicInformationValues" for BasicInformation
+ */
 export type BasicInformationValues = {
   project_name: string;
   contact_name: string;
@@ -20,6 +26,9 @@ export type BasicInformationValues = {
   project_cover: string;
 };
 
+/**
+ * type "ProjectDetailValues" for ProjectDetail
+ */
 export type ProjectDetailValues = {
   start_date: string;
   tags: Array<{
@@ -32,6 +41,9 @@ export type ProjectDetailValues = {
   size_existing_user: string;
 };
 
+/**
+ * type "LinksValues" for Links
+ */
 export type LinksValues = {
   project_website: string;
   project_telegram: string;
@@ -40,6 +52,9 @@ export type LinksValues = {
   project_other_link: string;
 };
 
+/**
+ * type "TokenInformationValues" for TokenInformation
+ */
 export type TokenInformationValues = {
   token_name: string;
   token_symbol: string;
@@ -49,7 +64,9 @@ export type TokenInformationValues = {
     tokennomics_value: number;
   }>;
 };
-
+/**
+ * type "Capital" for Capital
+ */
 export type Capital = {
   rounds: Array<{
     roundName: string;
@@ -58,6 +75,9 @@ export type Capital = {
   }>;
 };
 
+/**
+ * type "PublicTokenSale" for PublicTokenSale
+ */
 export type PublicTokenSale = {
   total_amount?: number;
   amount_through_Galaxy?: number;
@@ -67,11 +87,25 @@ export type PublicTokenSale = {
   sale: string;
 };
 
+/**
+ * type "StatusOfPartnerships" for StatusOfPartnerships
+ */
 export type StatusOfPartnerships = Array<{
   value: string;
 }>;
 
+/**
+ * type "Project_Status" for Project_Status
+ */
 export type Project_Status = {
   id: string;
+  value: string;
+};
+
+/**
+ * type "Project_Tag" for Project_Tag
+ */
+export type Project_Tag = {
+  label: string;
   value: string;
 };

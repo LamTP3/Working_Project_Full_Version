@@ -1,10 +1,16 @@
 import axios from "../axios.interceptor";
-import { Project, Project_Status } from "../type/type";
+import { Project, Project_Status, Project_Tag } from "../types/type";
+
 export const getAllProject = async (): Promise<Project[]> => {
   return axios.get("/Project");
 };
+
 export const getAllProjectStatus = async (): Promise<Project_Status[]> => {
   return axios.get("/Project_Status");
+};
+
+export const getProjecTag = async (): Promise<Project_Tag[]> => {
+  return axios.get("/Project_Tag");
 };
 
 export const getProductById = async (id: any): Promise<Project> => {

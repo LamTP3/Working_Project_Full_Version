@@ -5,7 +5,6 @@ import {
   TextAreaComp,
   MultipleSelect,
 } from "../../../../components";
-import dayjs from "dayjs";
 
 interface ProjectDetailProps {
   data: any;
@@ -26,7 +25,7 @@ const ProjectDetails: React.FC<ProjectDetailProps> = ({ data }) => {
                   fieldName="project_detail.start_date"
                   placeholder="estimate"
                   disabled={true}
-                  value={data?.start_date ? dayjs(data?.start_date) : null}
+                  dateValue={data?.start_date}
                 />
               </div>
             </Col>

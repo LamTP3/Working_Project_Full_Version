@@ -1,14 +1,22 @@
 import React, { useState, useEffect } from "react";
 import { Image, Upload } from "antd";
 import { UploadFileWarraper } from "./styled";
-import { UploadFileProps } from "./UploadFileType";
+import { UploadFileProps } from "../CommonInputType";
 import { UploadBoxIcon } from "../../../Icon";
 import type { GetProp, UploadFile, UploadProps } from "antd";
+import { UploadChangeParam } from "antd/es/upload";
 
-//Định nghĩa kiểu dữ liệu của file tải lên.
+/**
+ * FileType : Định nghĩa kiểu dữ liệu của file tải lên.
+ */
 type FileType = Parameters<GetProp<UploadProps, "beforeUpload">>[0];
 
-//Hàm chuyển đổi file thành base64 để xem trước.
+/** FUNCTIONS : getBase64
+ * Hàm chuyển đổi file thành base64 để xem trước.
+ *
+ * @param {File} file - Định nghĩa file
+ * @returns :Chuỗi base64
+ */
 const getBase64 = (file: FileType): Promise<string> =>
   new Promise((resolve, reject) => {
     const reader = new FileReader();
@@ -19,8 +27,10 @@ const getBase64 = (file: FileType): Promise<string> =>
   });
 
 const UploadFileComp: React.FC<
-  UploadFileProps & { value?: string; onChange?: (value: string) => void }
-> = ({ width, height, label, value, onChange, disabled, ...restProps }) => {
+  UploadFileProps & { onChange?: (value: string) => void }
+> = (props) => {
+  const { width, height, label, value, onChange, disabled, ...restProps } =
+    props;
   const [previewOpen, setPreviewOpen] = useState(false);
   const [previewImage, setPreviewImage] = useState("");
   const [fileList, setFileList] = useState<UploadFile[]>([]);
@@ -43,9 +53,9 @@ const UploadFileComp: React.FC<
     setPreviewOpen(true);
   };
 
-  const handleChange: UploadProps["onChange"] = async ({
-    fileList: newFileList,
-  }) => {
+  const handleChange: (
+    info: UploadChangeParam<UploadFile<FileType>>
+  ) => Promise<void> = async ({ fileList: newFileList }) => {
     setFileList(newFileList);
     if (newFileList.length > 0) {
       const file = newFileList[0];

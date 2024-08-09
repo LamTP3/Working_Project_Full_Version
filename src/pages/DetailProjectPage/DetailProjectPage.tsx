@@ -11,7 +11,7 @@ import {
 } from "./Section";
 import { getProductById } from "../../service/service";
 import { useEffect, useState } from "react";
-import { Project } from "../../type/type";
+import { Project } from "../../types/type";
 
 function DetailPage() {
   const { id } = useParams();

@@ -1,15 +1,9 @@
-import { Input, InputProps } from 'antd';
-import "../InputComp.scss"
-import React from 'react';
+import { Input, InputProps } from "antd";
+import "../InputComp.scss";
+import React from "react";
 
-interface InputCompProp extends InputProps {
+const InputComp: React.FC<InputProps> = (props) => {
+  return <Input {...props} className="custom-input" />;
+};
 
-}
-
-const InputComp: React.FC<InputCompProp> = (props) => {
-  return (
-    <Input {...props} className='custom-input' />
-  )
-}
-
-export default InputComp
+export default InputComp;

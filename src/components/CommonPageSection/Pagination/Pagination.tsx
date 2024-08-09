@@ -1,21 +1,24 @@
-import React from "react";
+import { NextAnPrevIcon } from "../../../Icon";
 import { Pagination } from "antd";
 import "./Pagination.scss";
-import { NextAnPrevIcon } from "../../../Icon";
+import React from "react";
+import { PaginationComponentProps } from "../SectionType";
 
-interface PaginationComponentProps {
-  current: number;
-  pageSize: number;
-  total: number;
-  onChange: (page: number, pageSize?: number) => void;
-}
+const PaginationComponent: React.FC<PaginationComponentProps> = (props) => {
+  /** REQUIRE PARAMS
+   *  @param {number} current    - dùng để đáng dấu trang hiện tại trong pagination
+   *  @param {number} pageSize   - dùng để hiển thị số item trên một trang
+   *  @param {number} total      - tổng số item
+   *  @param {function} onChange - hàm gọi khi thay đổi trang
+   */
+  const { current, pageSize, total, onChange } = props;
 
-const PaginationComponent: React.FC<PaginationComponentProps> = ({
-  current,
-  pageSize,
-  total,
-  onChange,
-}) => {
+  /** FUNCTION itemRender dùng để hiển thị icon cho pagination
+   * @param _
+   * @param type
+   * @param originalElement
+   * @returns
+   */
   const itemRender = (
     _: number,
     type: "page" | "prev" | "next" | "jump-prev" | "jump-next",

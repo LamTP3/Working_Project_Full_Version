@@ -3,12 +3,16 @@ import { SearchProps } from "antd/lib/input/Search";
 import "./SearchComp.scss";
 const { Search } = Input;
 
-interface SearchCompProp extends SearchProps {}
-
-const SearchComp: React.FC<SearchCompProp> = (props) => {
+const SearchComp: React.FC<SearchProps> = (props) => {
+  /** REQUIRE PARAMS
+   * @param {string} placeholder - là giá trị placeholder cho search
+   *
+   */
+  const { placeholder, ...rest } = props;
   return (
     <Search
-      {...props}
+      placeholder={placeholder}
+      {...rest}
       enterButton={
         <svg
           width="20"

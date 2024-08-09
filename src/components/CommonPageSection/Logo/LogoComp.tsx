@@ -1,13 +1,8 @@
 import React from "react";
 import "./LogoComp.scss";
+import { LogoProps } from "../SectionType";
 
-type Prop = {
-  size: "small" | "medium" | "large";
-};
-
-// small: 40px, medium: 50px, large: 100px
-
-const LogoComp: React.FC<Prop> = ({ size }) => {
+const LogoComp: React.FC<LogoProps> = ({ size }) => {
   return <div className={`logo-custom ${size}`}></div>;
 };
 

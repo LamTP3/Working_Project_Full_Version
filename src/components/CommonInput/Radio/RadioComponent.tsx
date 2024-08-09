@@ -1,28 +1,28 @@
 import React, { useState } from "react";
-import type { RadioChangeEvent, RadioGroupProps } from "antd";
+import type { RadioChangeEvent } from "antd";
 import { Radio } from "antd";
 import { StyledRadio } from "./styled";
+import { RadioComponentProps } from "../CommonInputType";
 
-interface RadioComponentProps extends RadioGroupProps {
-  options: { label: string; value: string }[];
-  valueChoose?: string;
-}
+const RadioComponent: React.FC<RadioComponentProps> = (props) => {
+  /** REQUIRE PARAMS
+   * @param {Array} options       - dùng để hiện những option được chọn
+   */
 
-const RadioComponent: React.FC<RadioComponentProps> = ({
-  options,
-  valueChoose,
-  ...props
-}) => {
+  /**OPTIONAL PARAMS
+   * @param {string} valueChoose  - dùng để 1 option  nếu đã có giá trị lưu trong json
+   */
+
+  const { options, valueChoose, ...rest } = props;
   const [value, setValue] = useState<string>(valueChoose ?? options[0].value);
 
   const onChange = (e: RadioChangeEvent) => {
-    console.log("radio checked", e.target.value);
     setValue(e.target.value);
   };
 
   return (
     <StyledRadio $diabled={props.disabled}>
-      <Radio.Group onChange={onChange} value={value} {...props}>
+      <Radio.Group onChange={onChange} value={value} {...rest}>
         {options.map((option) => (
           <Radio key={option.value} value={option.value}>
             {option.label}

@@ -1,24 +1,20 @@
-import { Project } from "../../../type/type";
 import PaginationComponent from "../Pagination/Pagination";
 import "./Table.scss";
 
-interface TableProps {
-  data: Project[];
-  onPageChange: (page: number, size?: number) => void;
-  currentPage: number;
-  pageSize: number;
-  TableHead: React.ReactNode;
-  TableBody: (data: any[]) => React.ReactNode;
-}
+import { TableProps } from "../SectionType";
 
-const Table: React.FC<TableProps> = ({
-  data,
-  onPageChange,
-  currentPage,
-  pageSize,
-  TableHead,
-  TableBody,
-}) => {
+const Table: React.FC<TableProps> = (props) => {
+  /**REQUIRE PARAMS
+   * @param {any[]} data            - dữ liệu table
+   * @param {function} onPageChange - hàm gọi khi thay đổi trang
+   * @param {number} currentPage    - trang hiện tại
+   * @param {number} pageSize       - dùng này một trang
+   * @param {function} TableHead    - hàm gọi khi thay đổi tiêu đề table
+   * @param {function} TableBody    - hàm gọi khi thay đổi nội dung table
+   *
+   */
+  const { data, onPageChange, currentPage, pageSize, TableHead, TableBody } =
+    props;
   return (
     <>
       <div>
