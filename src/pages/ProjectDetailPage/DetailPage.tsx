@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom";
-import { CollapseComponent } from "../../../components";
+import { CollapseComponent } from "../../components";
 import {
   BasicInformation,
   ProjectDetail,
@@ -9,9 +9,9 @@ import {
   PublicTokenSale,
   StatusOfPartnership,
 } from "./Section";
-import { getProductById } from "../../../service/service";
+import { getProductById } from "../../service/service";
 import { useEffect, useState } from "react";
-import { Project } from "../../../type/type";
+import { Project } from "../../type/type";
 
 function DetailPage() {
   const { id } = useParams();

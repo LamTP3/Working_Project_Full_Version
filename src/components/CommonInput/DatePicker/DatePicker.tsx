@@ -3,7 +3,7 @@ import { DatePicker, DatePickerProps } from "antd";
 import { DatePickerWarraper } from "./styled";
 import { DateIcon } from "../../../Icon";
 import { CloseOutlined } from "@ant-design/icons";
-import { dateFormat } from "../../../helper/contant";
+import { DATE_FORMAT } from "../../../helper/contant";
 import dayjs from "dayjs";
 import { FormikProps } from "formik";
 interface DatePickerFormikProps extends DatePickerProps {
@@ -31,7 +31,7 @@ const DatePickerComponent: React.FC<DatePickerFormikProps> = (props) => {
         showTime
         placeholder={placeholder ?? "MM/dd/yyyy HH:mm"}
         suffixIcon={<DateIcon />}
-        format={dateFormat}
+        format={DATE_FORMAT}
         value={value ? dayjs(value) : null}
         onBlur={handleBlur}
         onChange={handleChange}

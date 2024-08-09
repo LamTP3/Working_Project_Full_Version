@@ -6,7 +6,8 @@ import "react-toastify/dist/ReactToastify.css";
 import Header from "./components/CommonPageSection/Header/Header";
 import { Outlet } from "react-router";
 import ProjectListPage from "./pages/ProjectListPage/ProjectListPage";
-import ProjectDetail from "./pages/ProjectListPage/ProjectDetail/DetailPage";
+import ProjectDetail from "./pages/ProjectDetailPage/DetailPage";
+import { ROUTER } from "./helper/contant";
 const Layout = () => {
   return (
     <div>
@@ -32,20 +33,20 @@ const Layout = () => {
 const App: React.FC = () => {
   const router = createBrowserRouter([
     {
-      path: "/",
+      path: ROUTER.HOME,
       element: <Layout />,
       children: [
         { index: true, element: <SubmitProjectPage /> },
         {
-          path: "submit",
+          path: ROUTER.SUBMIT_PROJECT,
           element: <SubmitProjectPage />,
         },
         {
-          path: "list",
+          path: ROUTER.PROJECT_LIST,
           element: <ProjectListPage />,
         },
         {
-          path: "detail/:id",
+          path: ROUTER.PROJECT_DETAIL,
           element: <ProjectDetail />,
         },
       ],

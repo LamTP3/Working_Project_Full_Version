@@ -43,6 +43,13 @@ const ProjectDetails: React.FC<ProjectDetailProps> = ({ formik }) => {
                   fieldName="project_detail.start_date"
                 />
               </div>
+
+              {formik.touched.project_detail?.start_date &&
+              formik.errors.project_detail?.start_date ? (
+                <div className="text-red-600">
+                  {formik.errors.project_detail.start_date}
+                </div>
+              ) : null}
             </Col>
           </Row>
         </Col>

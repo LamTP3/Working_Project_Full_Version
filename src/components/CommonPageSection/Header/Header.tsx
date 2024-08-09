@@ -1,20 +1,20 @@
 import "./Header.scss";
 import LogoComp from "../Logo/LogoComp";
 import { Link } from "react-router-dom";
-
+import { ROUTER } from "../../../helper/contant";
 const Header = () => {
   return (
     <div className="header-container">
       <div className="header-inner">
-        <Link to="/" className="header-left cursor-pointer">
+        <Link to={ROUTER.HOME} className="header-left cursor-pointer">
           <LogoComp size="medium" />
           <h2 className="header-logo-text">Galaxy Pad</h2>
         </Link>
-        <div className="header-mid flex text-center justify-center">
-          <Link className="mr-3 cursor-pointer" to="/list">
+        <div className="header-mid flex">
+          <Link className="mr-3 cursor-pointer" to={ROUTER.PROJECT_LIST}>
             Projects
           </Link>
-          <Link className="mr-3cursor-pointer" to="/">
+          <Link className="mr-3cursor-pointer" to={ROUTER.SUBMIT_PROJECT}>
             Add Project
           </Link>
         </div>

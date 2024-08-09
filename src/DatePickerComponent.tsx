@@ -41,7 +41,6 @@ const DatePickerComponent: React.FC<DatePickerComponentProps> = ({
         {...props}
         value={field.value ? dayjs(field.value) : null}
         onChange={handleChange}
-        // onBlur={() => setTouched(true)}
         onBlur={handleBlur}
       />
       {meta.touched && meta.error ? (

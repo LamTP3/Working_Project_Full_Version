@@ -14,7 +14,7 @@ export const MultipleSelectWarraper = styled.div<Props>`
         margin-inline-start: 8px;
         .ant-select-selection-item-content {
           color: #fff;
-          font-family: Inter;
+          font-family: Inter, sans-serif;
           font-size: 14px;
           font-weight: 400;
           line-height: 16.94px;

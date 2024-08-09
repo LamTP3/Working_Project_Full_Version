@@ -1,7 +1,7 @@
 import React from "react";
 import { Pagination } from "antd";
 import "./Pagination.scss";
-import NextAnPrevIcon from "../../../Icon/NextAndPrevIcon/NextAnPrevIcon";
+import { NextAnPrevIcon } from "../../../Icon";
 
 interface PaginationComponentProps {
   current: number;

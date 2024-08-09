@@ -18,7 +18,7 @@ export const StyledRadio = styled.div<RadioProps>`
 
     .ant-radio + * {
       color: var(--text-color);
-      font-family: Inter;
+      font-family: Inter, sans-serif;
       font-size: 16px;
       font-weight: 500;
       line-height: 19.36px;

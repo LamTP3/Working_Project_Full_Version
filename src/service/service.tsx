@@ -14,3 +14,11 @@ export const getProductById = async (id: any): Promise<Project> => {
 export const postNewProject = async (project: any) => {
   return axios.post("/Project", project);
 };
+
+export const updateProject = async (project: any) => {
+  return axios.put(`/Project/${project.id}`, project);
+};
+
+export const deleteProject = async (id: any) => {
+  return axios.delete(`/Project/${id}`);
+};
