@@ -401,7 +401,10 @@ const ProjectListPage = () => {
         return null;
     }
   };
-
+  /**
+   * FUNCTION: handleOpenModal
+   * @param {ModalName} modal_name  - tham số số giá trị modalName để mở modal tương ứng
+   */
   const handleOpenModal = (modal_name: ModalName) => {
     setOpen(true);
     setModalName(modal_name);
@@ -411,6 +414,11 @@ const ProjectListPage = () => {
     setOpen(false);
   };
 
+  /**
+   * FUNCTION: handlePageChange
+   * @param page - trang hiện tại
+   * @param size - số lượng item trên 1 trang
+   */
   const handlePageChange = (page: number, size?: number) => {
     setCurrentPage(page);
     if (size) {
@@ -418,10 +426,20 @@ const ProjectListPage = () => {
     }
   };
 
+  /**
+   * FUNCTION: handleTabChange
+   * function chuyển đến tab tương ứng với key truyền vào
+   * @param {string} key - vị trí tab hiện tại
+   */
   const handleTabChange = (key: string) => {
     setActiveTab(key);
   };
-
+  /**
+   * FUNCTION: getFilteredData
+   * dùng để lọc data Project tương ứng với status truyền vào
+   * @param {string} statusKey - status của project được truyền vào (Approved, Rejected, Pending)
+   * @returns trả về data tương ứng với từng tab để render
+   */
   const getFilteredData = (statusKey: string) => {
     return data.filter((project) => {
       const statusItem = status.find(

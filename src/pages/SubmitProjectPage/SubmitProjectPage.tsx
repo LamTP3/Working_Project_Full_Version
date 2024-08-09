@@ -1,5 +1,4 @@
 import { useState } from "react";
-
 import * as Yup from "yup";
 import { ButtonComponent, CollapseComponent } from "../../components";
 import {
@@ -173,6 +172,14 @@ const SubmitProjectPage = () => {
     },
   });
 
+  /**
+   * Function createTouchedObject:
+   * lý do cần function này là với mục đích đánh dấu những trường
+   * require trong formik mà chưa nhập giá trị để báo lỗi
+   *
+   * @param values - giá trị của của mảng fomick
+   * @returns trả về một object đã đáng dấu là chạm vào cac trường
+   */
   const createTouchedObject = (values: any) => {
     return Object.keys(values).reduce((acc: any, key: string) => {
       acc[key] =
@@ -182,7 +189,14 @@ const SubmitProjectPage = () => {
       return acc;
     }, {});
   };
-
+  /**
+   * Function handleSubmit:
+   * mục đích là một middleware đánh dấu giá trị formik chưa nhập và báo các
+   * message tương ứng yêu cầu nhập hết các trường require hay báo việc xác
+   * thực captcha
+   *
+   * @param event - event submit
+   */
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
