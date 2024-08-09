@@ -24,26 +24,24 @@ const Capital = ({ data }: Props) => {
     <div>
       <Row gutter={[16, 16]}>
         {options && (
-          <>
-            <Col span={8}>
-              <Row>
-                <Col span={12}>
-                  <CheckboxComponent
-                    optionsData={options}
-                    useCricle={false}
-                    height={true}
-                    allValues={value}
-                    disabled
-                  />
-                </Col>
-              </Row>
-            </Col>
-          </>
+          <Col span={8}>
+            <Row>
+              <Col span={12}>
+                <CheckboxComponent
+                  optionsData={options}
+                  useCricle={false}
+                  height={true}
+                  allValues={value}
+                  disabled
+                />
+              </Col>
+            </Row>
+          </Col>
         )}
 
         <Col span={16}>
-          {data?.rounds?.map((item: any, index: any) => (
-            <Row key={index} className="mt-5" align="middle" gutter={[40, 0]}>
+          {data?.rounds?.map((item: any) => (
+            <Row key={item} className="mt-5" align="middle" gutter={[40, 0]}>
               <Col span={12}>
                 <DatePickerComponent
                   fieldName="startDate"

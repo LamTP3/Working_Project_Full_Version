@@ -509,7 +509,7 @@ const ProjectListPage = () => {
 
   const TableBody = (data: any) => {
     return (
-      <>
+      <div>
         {data.map((item: any) => (
           <tr key={item.id}>
             <td>
@@ -558,7 +558,7 @@ const ProjectListPage = () => {
             </td>
           </tr>
         ))}
-      </>
+      </div>
     );
   };
 

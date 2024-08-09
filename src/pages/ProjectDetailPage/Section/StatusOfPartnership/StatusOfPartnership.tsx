@@ -34,9 +34,7 @@ const StatusOfPartnership: React.FC<Props> = ({ data }) => {
                   disabled
                 />
               ) : (
-                <>
-                  <div> Somthing Wrong</div>
-                </>
+                <div> Somthing Wrong</div>
               )}
             </Col>
           </Row>

@@ -66,8 +66,8 @@ const TokenInformation: React.FC<TokenInformationProps> = ({ data }) => {
           </Row>
         </Col>
         <LabelComponent label="Tokenomics *" />
-        {data?.tokennomics.map((item: any, index: number) => (
-          <Col key={index} className="gutter-row mb-[15px] mt-2" span={24}>
+        {data?.tokennomics.map((item: any) => (
+          <Col key={item.id} className="gutter-row mb-[15px] mt-2" span={24}>
             <Row>
               <Col className="gutter-row flex gap-5" span={24}>
                 <div className="w-full">
