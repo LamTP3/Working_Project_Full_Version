@@ -1,45 +1,42 @@
 import React from "react";
-import { Checkbox } from "antd";
+import { Checkbox, Col, Row } from "antd";
 import { CheckBoxProps } from "../CommonInputType";
 import { CheckboxWarraper } from "./styled";
 
 const CheckboxComponent: React.FC<CheckBoxProps> = (props) => {
   /** REQUIRE PARAMS
    *
-   * @param {object} optionsData  - nhận kiểu "object" có 2 thuộc tính label và value đều kiểu "string" và dùng để hiển thị checkbox
+   * @param {object} optionsData  - nhận kiểu "object" có 2 thuộc tính required là label và value đều kiểu "string" và dùng để hiển thị checkbox
+   *                                và nhận một component là option prop
    */
 
   /** OPTIONAL PARAMS
    * @param {boolean} useCricle   - dùng để hiển thị border hình tròn
-   * @param {boolean} height      - dây là option param đặc biệt dùng cho section Capital
-   *                                để set khoảng cách từ trên xuống dưới giữa từng checkbox
    * @param {function} onChange   - dùng để thay đổi value của checkbox
    * @param {Array} allValues     - nhận kiểu "array" dùng để hiển thị checkbox đã được check
    */
-  const {
-    optionsData,
-    useCricle,
-    onChange,
-    allValues,
-    height,
-    disabled,
-    ...rest
-  } = props;
+  const { optionsData, useCricle, onChange, allValues, disabled } = props;
   const defaultValues = allValues ?? [optionsData[0]?.value];
-
   return (
-    <CheckboxWarraper
-      $circle={useCricle}
-      $heightElement={height}
-      $disabled={disabled}
-    >
+    <CheckboxWarraper $circle={useCricle} $disabled={disabled}>
       <Checkbox.Group
-        options={optionsData}
         defaultValue={defaultValues}
         onChange={onChange}
         disabled={disabled}
-        {...rest}
-      />
+      >
+        <Row gutter={[40, 40]}>
+          {optionsData.map((option) => (
+            <React.Fragment key={option.value}>
+              <Col span={option.component ? 6 : 24} className="mt-3">
+                <Checkbox value={option.value} disabled={disabled}>
+                  {option.label}
+                </Checkbox>
+              </Col>
+              {option.component && <Col span={18}>{option.component}</Col>}
+            </React.Fragment>
+          ))}
+        </Row>
+      </Checkbox.Group>
     </CheckboxWarraper>
   );
 };

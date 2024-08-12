@@ -1,4 +1,3 @@
-import { Col, Row } from "antd";
 import React, { useState } from "react";
 import { CheckboxComponent } from "../../../../components";
 
@@ -28,31 +27,22 @@ const StatusOfPartnerships: React.FC<StatusOfPartnershipsProps> = ({
   };
 
   return (
-    <div>
-      <Row>
-        <Col className="gutter-row" span={24}>
-          <Row>
-            <Col className="gutter-row" span={12}>
-              <CheckboxComponent
-                optionsData={options}
-                useCricle={false}
-                value={formik.values.status_of_partnerships}
-                onChange={handleCheckboxChange}
-                height={true}
-              />
-              {formik.touched.status_of_partnerships &&
-              formik.errors.status_of_partnerships ? (
-                <div className="text-red-600">
-                  {typeof formik.errors.status_of_partnerships === "string"
-                    ? formik.errors.status_of_partnerships
-                    : "Some thing wrong!"}
-                </div>
-              ) : null}
-            </Col>
-          </Row>
-        </Col>
-      </Row>
-    </div>
+    <>
+      <CheckboxComponent
+        optionsData={options}
+        useCricle={false}
+        value={formik.values.status_of_partnerships}
+        onChange={handleCheckboxChange}
+      />
+      {formik.touched.status_of_partnerships &&
+      formik.errors.status_of_partnerships ? (
+        <div className="text-red-600">
+          {typeof formik.errors.status_of_partnerships === "string"
+            ? formik.errors.status_of_partnerships
+            : "Some thing wrong!"}
+        </div>
+      ) : null}
+    </>
   );
 };
 

@@ -108,7 +108,7 @@ const TokenInformation: React.FC<TokenInformationProps> = ({ formik }) => {
         <LabelComponent label="Tokenomics *" />
         {formik.values.token_information.tokennomics.map((item, index) => (
           <Col
-            key={item.tokennomics_value}
+            key={item.tokennomics_title}
             className="gutter-row mb-[15px] mt-2"
             span={24}
           >

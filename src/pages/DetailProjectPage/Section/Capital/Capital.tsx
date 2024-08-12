@@ -12,54 +12,36 @@ interface Option {
 
 const Capital = ({ data }: Props) => {
   const options: Option[] = data?.rounds?.map((round: any, index: number) => {
-    console.log("Data at index", index, round);
     return {
       label: "Investment Round " + (index + 1),
       value: (index + 1).toString(),
+      component: (
+        <Row key={round.value} align="middle" gutter={[40, 0]}>
+          <Col span={12}>
+            <DatePickerComponent disabled dateValue={round.startDate} />
+          </Col>
+
+          <Col span={12}>
+            <DatePickerComponent disabled dateValue={round.endDate} />
+          </Col>
+        </Row>
+      ),
     };
   });
   const value = options ? options?.map((item) => item.value) : [];
   return (
-    <div>
-      <Row gutter={[16, 16]}>
-        {options && (
-          <Col span={8}>
-            <Row>
-              <Col span={12}>
-                <CheckboxComponent
-                  optionsData={options}
-                  useCricle={false}
-                  height={true}
-                  allValues={value}
-                  disabled
-                />
-              </Col>
-            </Row>
-          </Col>
-        )}
-
-        <Col span={16}>
-          {data?.rounds?.map((item: any) => (
-            <Row key={item} className="mt-5" align="middle" gutter={[40, 0]}>
-              <Col span={12}>
-                <DatePickerComponent
-                  fieldName="startDate"
-                  disabled
-                  dateValue={item.startDate}
-                />
-              </Col>
-              <Col span={12}>
-                <DatePickerComponent
-                  fieldName="endDate"
-                  disabled
-                  dateValue={item.endDate}
-                />
-              </Col>
-            </Row>
-          ))}
+    <Row gutter={[16, 16]}>
+      {options && (
+        <Col span={24}>
+          <CheckboxComponent
+            optionsData={options}
+            useCricle={false}
+            allValues={value}
+            disabled
+          />
         </Col>
-      </Row>
-    </div>
+      )}
+    </Row>
   );
 };
 

@@ -26,9 +26,8 @@ export interface ButtonCompProps extends ButtonProps {
  * Props cho component Checkbox
  */
 export interface CheckBoxProps extends CheckboxProps {
-  optionsData: { label: string; value: string }[];
+  optionsData: { label: string; value: string; component?: React.ReactNode }[];
   useCricle?: boolean;
-  height?: boolean;
   onChange?: (...args: any) => void;
   allValues?: string[];
 }

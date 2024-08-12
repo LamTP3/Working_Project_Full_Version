@@ -2,20 +2,18 @@ import styled from "styled-components";
 
 type Props = {
   $circle?: boolean;
-  $heightElement?: boolean;
   $disabled?: boolean;
 };
 export const CheckboxWarraper = styled.div<Props>`
-  .ant-checkbox-wrapper {
-    margin-top: ${(props) => (props.$heightElement ? "36px" : "0px")};
-    white-space: nowrap;
+  .ant-checkbox-group {
+    width: 100%;
   }
   .ant-checkbox-inner {
     border: 1.5px solid var(--text-color) !important;
     background-color: var(--background-color) !important;
     width: 20px !important;
     height: 20px !important;
-    border-radius: ${(props) => (props.$circle === true ? "50px" : "4px")};
+    border-radius: ${(props) => (props.$circle ? "50px" : "4px")};
   }
   .ant-checkbox-inner::after {
     inset-inline-start: 29% !important;
