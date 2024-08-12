@@ -18,6 +18,7 @@ import { Project } from "../../types/type";
 import { toast } from "react-toastify";
 import { postNewProject } from "../../service/service";
 import { useNavigate } from "react-router";
+
 const initialValues: Project = {
   basic_information: {
     project_name: "",
@@ -154,7 +155,7 @@ const validationSchema = Yup.object({
 });
 
 const SubmitProjectPage = () => {
-  const [captchaValue, setCaptchaValue] = useState<string | null>(null);
+  const [captchaValue] = useState<string | null>(null);
   const navigate = useNavigate();
   const formik: FormikProps<Project> = useFormik<Project>({
     initialValues,
@@ -239,7 +240,7 @@ const SubmitProjectPage = () => {
             />
           </div>
 
-          <div className="mt-5">
+          {/* <div className="mt-5">
             <CollapseComponent
               title="Links"
               child={<Links formik={formik} />}
@@ -285,7 +286,7 @@ const SubmitProjectPage = () => {
               arrow_icon={true}
               background_color="Gradient"
             />
-          </div>
+          </div> */}
         </form>
       </div>
     </div>

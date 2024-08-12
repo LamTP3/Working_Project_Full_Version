@@ -84,17 +84,14 @@ const ProjectListPage = () => {
   useEffect(() => {
     if (selectedProject) {
       const projectRounds = selectedProject.capital.rounds || [];
-      formikConfirm.setValues((prevValues) => ({
-        rounds:
-          prevValues.rounds.length === 0
-            ? projectRounds.map((round) => ({
-                startDate: round.startDate,
-                endDate: round.endDate,
-              }))
-            : prevValues.rounds,
-      }));
+      formikConfirm.setValues({
+        rounds: projectRounds.map((round) => ({
+          startDate: round.startDate,
+          endDate: round.endDate,
+        })),
+      });
     }
-  }, [selectedProject]);
+  }, [open]);
 
   const fetchDataProject = async () => {
     try {
@@ -292,13 +289,7 @@ const ProjectListPage = () => {
                       <DatePickerComponent
                         formik={formikConfirm}
                         fieldName={`rounds.${index}.startDate`}
-                        value={
-                          formikConfirm?.values?.rounds[index]?.startDate
-                            ? dayjs(
-                                formikConfirm.values.rounds[index].startDate
-                              )
-                            : null
-                        }
+                        dateValue={item.startDate}
                         disabled={false}
                         width="100%"
                         maxDate={dayjs(item.endDate).subtract(1, "day")}
@@ -314,15 +305,13 @@ const ProjectListPage = () => {
                     </Col>
                     <Col span={12} className="mt-3">
                       <DatePickerComponent
+                        formik={formikConfirm}
                         fieldName={`rounds.${index}.endDate`}
-                        dateValue={
-                          formikConfirm?.values?.rounds[index]?.endDate
-                        }
+                        dateValue={item.endDate}
                         disabled={false}
                         width="100%"
                         minDate={dayjs(item.startDate).add(1, "days")}
                       />
-
                       {formikConfirm.touched.rounds?.[index]?.endDate &&
                       formikConfirm.errors.rounds &&
                       typeof formikConfirm.errors.rounds[index] === "object" &&

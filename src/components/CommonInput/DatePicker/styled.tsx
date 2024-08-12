@@ -33,11 +33,16 @@ export const DatePickerWarraper = styled.div<Props>`
     color: var(--gray-color) !important;
   }
   span.anticon {
-  display: ${(props) => (props.$disabled ? "none" : "block")};
+    display: ${(props) => (props.$disabled ? "none" : "block")};
     svg {
       path {
         fill: white;
       }
     }
+  }
+  :where(.css-dev-only-do-not-override-1uq9j6g).ant-picker-dropdown
+    .ant-picker-ranges
+    .ant-picker-ok {
+    display: none;
   }
 `;

@@ -31,14 +31,18 @@ const ProjectDetails: React.FC<ProjectDetailProps> = ({ formik }) => {
               </div>
               <div className="mt-[8px]">
                 <DatePickerComponent
+                  formik={formik}
+                  fieldName="project_detail.start_date"
                   placeholder="estimate"
                   disabled={false}
                   dateValue={formik.values.project_detail.start_date}
-                  formik={formik}
-                  fieldName="project_detail.start_date"
                 />
               </div>
-
+              <div className="text-red-600">
+                {formik.touched.project_detail?.start_date
+                  ? "Touch from Detail"
+                  : "Don't touch from Detail"}
+              </div>
               {formik.touched.project_detail?.start_date &&
               formik.errors.project_detail?.start_date ? (
                 <div className="text-red-600">
