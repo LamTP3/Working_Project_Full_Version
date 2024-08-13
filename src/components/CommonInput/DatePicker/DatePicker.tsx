@@ -23,10 +23,8 @@ const DatePickerComponent: React.FC<DatePickerFormikProps> = (props) => {
    * @param  {Dayjs }date         - dùng để thay đổi date thành string để lưu giá trị với formik
    */
   const handleChange = (date: Dayjs) => {
-    // console.log("date: ", date);
     if (date) {
       const formattedDate = date.format(DATE_FORMAT);
-      // console.log("formattedDate: ", formattedDate);
       formik?.setFieldValue(name, formattedDate);
     } else {
       formik?.setFieldValue(name, "");
@@ -37,22 +35,8 @@ const DatePickerComponent: React.FC<DatePickerFormikProps> = (props) => {
    * có tác dụng bắt sự kiện  đã click vào datepicker
    */
   const handleBlur = () => {
-    console.log("Field Name:", name);
     formik?.setFieldTouched(name, true);
   };
-
-  console.log("What we need: ", `formik?.touched.${name}`);
-  console.log("Touch Data", formik?.touched);
-  console.log(
-    "Check touched for field:",
-    name,
-    "is",
-    formik?.touched?.project_detail
-  );
-
-  // console.log(`What we have: `, formik?.touched[name]);
-  // console.log(`What error: `, formik?.errors[name]);
-  console.log(`----------------`);
 
   return (
     <DatePickerWarraper $disabled={disabled}>
@@ -68,13 +52,6 @@ const DatePickerComponent: React.FC<DatePickerFormikProps> = (props) => {
         disabled={disabled}
         {...rest}
       />
-      <div className="text-red-600 mt-1">
-        {formik?.touched[name] ? "Touch from Date" : "Don't touch from Date"}
-      </div>
-
-      {formik?.touched[name] && formik?.errors[name] ? (
-        <div className="text-red-600 mt-1">123</div>
-      ) : null}
     </DatePickerWarraper>
   );
 };

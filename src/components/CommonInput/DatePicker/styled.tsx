@@ -40,9 +40,4 @@ export const DatePickerWarraper = styled.div<Props>`
       }
     }
   }
-  :where(.css-dev-only-do-not-override-1uq9j6g).ant-picker-dropdown
-    .ant-picker-ranges
-    .ant-picker-ok {
-    display: none;
-  }
 `;

@@ -38,11 +38,6 @@ const ProjectDetails: React.FC<ProjectDetailProps> = ({ formik }) => {
                   dateValue={formik.values.project_detail.start_date}
                 />
               </div>
-              <div className="text-red-600">
-                {formik.touched.project_detail?.start_date
-                  ? "Touch from Detail"
-                  : "Don't touch from Detail"}
-              </div>
               {formik.touched.project_detail?.start_date &&
               formik.errors.project_detail?.start_date ? (
                 <div className="text-red-600">
