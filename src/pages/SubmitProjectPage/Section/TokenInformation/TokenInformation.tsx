@@ -10,6 +10,7 @@ import {
 import { FormikProps } from "formik";
 import { Project } from "../../../../types/type";
 import React from "react";
+import "./TokenInformation.scss";
 
 interface TokenInformationProps {
   formik: FormikProps<Project>;
@@ -34,11 +35,11 @@ const TokenInformation: React.FC<TokenInformationProps> = ({ formik }) => {
     <div>
       <Row>
         <Col className="gutter-row mb-[30px]" span={24}>
-          <Row gutter={[40, 0]}>
-            <Col className="gutter-row " span={12}>
+          <Row gutter={[40, 10]}>
+            <Col className="gutter-row " xs={24} lg={12} md={24}>
               <div className="flex gap-[20px]">
                 <div className="w-full">
-                  <div className="mb-2">
+                  <div className="mb-2 w-full">
                     <LabelComponent label="Token name " required />
                   </div>
                   <div>
@@ -58,10 +59,10 @@ const TokenInformation: React.FC<TokenInformationProps> = ({ formik }) => {
                   </div>
                 </div>
                 <div>
-                  <div className="mb-2">
+                  <div className="mb-2 w-[130px]">
                     <LabelComponent label="Token Symbol " required />
                   </div>
-                  <div className="max-w-[180px]">
+                  <div>
                     <InputComp
                       name="token_information.token_symbol"
                       placeholder="e.g. BTC"
@@ -79,9 +80,9 @@ const TokenInformation: React.FC<TokenInformationProps> = ({ formik }) => {
                 </div>
               </div>
             </Col>
-            <Col className="gutter-row " span={12}>
+            <Col className="gutter-row " xs={24} md={12}>
               <div>
-                <div className="mb-2">
+                <div className="token-contract mb-2">
                   <LabelComponent label="Token contract address" required />
                 </div>
                 <div>
@@ -107,11 +108,7 @@ const TokenInformation: React.FC<TokenInformationProps> = ({ formik }) => {
         </Col>
         <LabelComponent label="Tokenomics *" />
         {formik.values.token_information.tokennomics.map((item, index) => (
-          <Col
-            key={item.tokennomics_title}
-            className="gutter-row mb-[15px] mt-2"
-            span={24}
-          >
+          <Col key={index} className="gutter-row mb-[15px] mt-2" span={24}>
             <Row>
               <Col className="gutter-row flex gap-5" span={24}>
                 <div className="w-full">
@@ -170,7 +167,7 @@ const TokenInformation: React.FC<TokenInformationProps> = ({ formik }) => {
             </Row>
           </Col>
         ))}
-        <Col className="gutter-row mb-[15px]" span={24}>
+        <Col className="gutter-row mb-[15px] mt-2" span={24}>
           <Row>
             <Col className="gutter-row flex gap-5" span={24}>
               <div className="w-full">

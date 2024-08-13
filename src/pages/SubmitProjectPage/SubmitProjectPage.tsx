@@ -217,8 +217,8 @@ const SubmitProjectPage = () => {
   };
 
   return (
-    <div className="w-full xl:max-w-[1000px] md:max-w-[600px] sm:max-w-[600px] mx-auto">
-      <div className="mx-[40px] my-[40px]">
+    <div className="submit-container w-full mx-auto">
+      <div className="xl:px-[122px] md:px-[80px] xs-pd-20 mt-8">
         <div className="mb-12">
           <Header />
         </div>

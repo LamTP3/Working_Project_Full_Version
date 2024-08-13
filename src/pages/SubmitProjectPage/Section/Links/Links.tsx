@@ -17,7 +17,7 @@ const Links: React.FC<LinkProps> = ({ formik }) => {
   return (
     <div>
       <Row gutter={[20, 30]}>
-        <Col span={12}>
+        <Col xs={24} md={12}>
           <div>
             <LabelComponent label="Project Website" required />
           </div>
@@ -37,7 +37,7 @@ const Links: React.FC<LinkProps> = ({ formik }) => {
             ) : null}
           </div>
         </Col>
-        <Col span={12}>
+        <Col xs={24} md={12}>
           <div>
             <LabelComponent label="Project Twitter" required />
           </div>
@@ -57,7 +57,7 @@ const Links: React.FC<LinkProps> = ({ formik }) => {
             ) : null}
           </div>
         </Col>
-        <Col span={12}>
+        <Col xs={24} md={12}>
           <div>
             <LabelComponent label="Project Telegram" required />
           </div>
@@ -77,7 +77,7 @@ const Links: React.FC<LinkProps> = ({ formik }) => {
             ) : null}
           </div>
         </Col>
-        <Col span={12}>
+        <Col xs={24} md={12}>
           <div>
             <LabelComponent label="Project Medium" />
           </div>

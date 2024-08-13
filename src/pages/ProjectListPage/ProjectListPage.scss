@@ -6,3 +6,14 @@
   text-align: left;
   color: #ffffff;
 }
+
+Table {
+  overflow-x: auto;
+}
+
+@media (max-width: 765px) {
+  .projectlist-inner {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}

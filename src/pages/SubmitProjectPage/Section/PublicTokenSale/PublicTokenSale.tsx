@@ -8,6 +8,7 @@ import {
 
 import { FormikProps } from "formik";
 import { Project } from "../../../../types/type";
+import "./PublicTokenSale.scss";
 
 interface PublicTokenSaleProps {
   formik: FormikProps<Project>;
@@ -20,15 +21,15 @@ const PublicTokenSale: React.FC<PublicTokenSaleProps> = ({ formik }) => {
   ];
   return (
     <div>
-      <Row>
-        <Col span={12} className="pr-9">
+      <Row gutter={[0, 10]}>
+        <Col xs={24} md={12} className="repon-pd pr-9">
           <div>
             <LabelComponent
               label="Total amount to be raised from public token sales?"
               required
             />
           </div>
-          <div>
+          <div className="mt-2">
             <InputComp
               name="public_token_sale.total_amount"
               placeholder="$1,000,000"
@@ -44,14 +45,14 @@ const PublicTokenSale: React.FC<PublicTokenSaleProps> = ({ formik }) => {
             ) : null}
           </div>
         </Col>
-        <Col span={12} className="pr-9">
+        <Col xs={24} md={12} className="rp-mt-custom repon-pd pr-9 ">
           <div>
             <LabelComponent
               label="Preferred amount to be raised through GalaxyPad?"
               required
             />
           </div>
-          <div>
+          <div className="mt-2">
             <InputComp
               name="public_token_sale.amount_through_Galaxy"
               placeholder="$500,000"
@@ -67,14 +68,14 @@ const PublicTokenSale: React.FC<PublicTokenSaleProps> = ({ formik }) => {
             ) : null}
           </div>
         </Col>
-        <Col span={12} className="pr-9 mt-5">
+        <Col xs={24} md={12} className="pr-9 mt-5">
           <div>
             <LabelComponent
               label="Are you flexible with the amounts? "
               required
             />
           </div>
-          <div>
+          <div className="mt-2">
             <RadioComponent
               options={radioOptions}
               name="public_token_sale.flexible_amount"
@@ -96,7 +97,7 @@ const PublicTokenSale: React.FC<PublicTokenSaleProps> = ({ formik }) => {
               required
             />
           </div>
-          <div>
+          <div className="mt-2">
             <InputComp
               name="public_token_sale.planned_FDV"
               placeholder="$30,000,000"
@@ -113,12 +114,12 @@ const PublicTokenSale: React.FC<PublicTokenSaleProps> = ({ formik }) => {
           </div>
         </Col>
       </Row>
-      <Row>
-        <Col span={24} className=" pr-9">
+      <Row gutter={[0, 10]}>
+        <Col span={24} className=" mt-5 pr-9">
           <div>
             <LabelComponent label="Other information" />
           </div>
-          <div>
+          <div className="mt-2">
             <TextAreaComp
               name="public_token_sale.other_information"
               placeholder="Provide any information that helps us understand any expectations that you have."
@@ -132,7 +133,7 @@ const PublicTokenSale: React.FC<PublicTokenSaleProps> = ({ formik }) => {
           <div>
             <LabelComponent label="When do you want to conduct the sale?" />
           </div>
-          <div>
+          <div className="mt-2">
             <InputComp
               name="public_token_sale.sale"
               placeholder="Provide any information that helps us understand any expectations that you have."

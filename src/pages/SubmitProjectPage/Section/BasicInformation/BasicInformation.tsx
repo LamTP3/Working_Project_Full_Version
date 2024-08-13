@@ -18,7 +18,7 @@ const BasicInformation: React.FC<BasicInformationProps> = ({ formik }) => {
       <div>
         <Row>
           <Col className="gutter-row mt-5" span={24}>
-            <Row gutter={[40, 0]}>
+            <Row gutter={[40, 30]}>
               <Col xs={24} md={12}>
                 <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
                   <Col className="gutter-row " span={24}>
@@ -91,7 +91,7 @@ const BasicInformation: React.FC<BasicInformationProps> = ({ formik }) => {
             </Row>
           </Col>
           <Col className="gutter-row mt-5" span={24}>
-            <Row gutter={[40, 0]}>
+            <Row gutter={[40, 30]}>
               <Col xs={24} md={12}>
                 <Row>
                   <Col className="gutter-row " span={24}>
