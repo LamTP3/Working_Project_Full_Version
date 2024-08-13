@@ -6,9 +6,11 @@ import Header from "./components/CommonPageSection/Header/Header";
 import { Outlet } from "react-router";
 import { ROUTER } from "./helper/contant";
 import { ProjectListPage, SubmitProjectPage, DetailProjectPage } from "./pages";
+import GlobalStyle from "./style/styled";
 const Layout = () => {
   return (
     <div>
+      <GlobalStyle />
       <ToastContainer
         position="top-right"
         autoClose={5000}
