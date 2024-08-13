@@ -3,6 +3,7 @@ import { Col, Row } from "antd";
 import { FormikProps } from "formik";
 import { CheckboxComponent, DatePickerComponent } from "../../../../components";
 import { Project } from "../../../../types/type";
+import dayjs from "dayjs";
 
 interface CapitalProps {
   formik: FormikProps<Project>;
@@ -16,7 +17,7 @@ const Capital: React.FC<CapitalProps> = ({ formik }) => {
     { label: "Invesment Round 4", value: "4" },
   ];
 
-  const [checkedOptions, setCheckedOptions] = useState([optionsData[0].value]);
+  const [checkedOptions, setCheckedOptions] = useState<string[]>([]);
 
   const handleCheckboxChange = (checkedValues: any) => {
     setCheckedOptions(checkedValues);
@@ -32,6 +33,14 @@ const Capital: React.FC<CapitalProps> = ({ formik }) => {
             formik={formik}
             fieldName={`capital.rounds[${index}].startDate`}
             dateValue={formik.values.capital.rounds[index]?.startDate}
+            maxDate={
+              formik.values.capital.rounds[index]?.endDate
+                ? dayjs(formik.values.capital.rounds[index]?.endDate).subtract(
+                    1,
+                    "day"
+                  )
+                : undefined
+            }
             disabled={!checkedOptions.includes(option.value)}
           />
         </Col>
@@ -40,6 +49,14 @@ const Capital: React.FC<CapitalProps> = ({ formik }) => {
           <DatePickerComponent
             fieldName={`capital.rounds[${index}].endDate`}
             formik={formik}
+            minDate={
+              formik.values.capital.rounds[index]?.startDate
+                ? dayjs(formik.values.capital.rounds[index]?.startDate).add(
+                    1,
+                    "day"
+                  )
+                : undefined
+            }
             dateValue={formik.values.capital.rounds[index]?.endDate}
             disabled={!checkedOptions.includes(option.value)}
           />

@@ -16,7 +16,7 @@ const CheckboxComponent: React.FC<CheckBoxProps> = (props) => {
    * @param {Array} allValues     - nhận kiểu "array" dùng để hiển thị checkbox đã được check
    */
   const { optionsData, useCricle, onChange, allValues, disabled } = props;
-  const defaultValues = allValues ?? [optionsData[0]?.value];
+  const defaultValues = allValues ?? undefined;
   return (
     <CheckboxWarraper $circle={useCricle} $disabled={disabled}>
       <Checkbox.Group
