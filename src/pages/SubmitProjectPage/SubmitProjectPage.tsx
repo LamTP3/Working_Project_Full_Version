@@ -279,7 +279,7 @@ const SubmitProjectPage = () => {
           <div className="mt-5">
             <Captcha onCaptchaChange={setCaptchaValue} />
           </div>
-          <div className="mt-5">
+          <div className="my-5">
             <ButtonComponent
               htmlType="submit"
               button_content="Submit Information"

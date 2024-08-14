@@ -27,8 +27,8 @@ const Capital: React.FC<CapitalProps> = ({ formik }) => {
     label: option.label,
     value: option.value,
     component: (
-      <Row key={option.value} align="middle" gutter={[40, 0]}>
-        <Col span={12}>
+      <Row key={option.value} align="middle" gutter={[40, 30]}>
+        <Col xs={24} md={12} sm={12}>
           <DatePickerComponent
             formik={formik}
             fieldName={`capital.rounds[${index}].startDate`}
@@ -45,7 +45,7 @@ const Capital: React.FC<CapitalProps> = ({ formik }) => {
           />
         </Col>
 
-        <Col span={12}>
+        <Col xs={24} md={12} sm={12}>
           <DatePickerComponent
             fieldName={`capital.rounds[${index}].endDate`}
             formik={formik}

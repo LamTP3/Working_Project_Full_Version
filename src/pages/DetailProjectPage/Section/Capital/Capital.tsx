@@ -16,12 +16,12 @@ const Capital = ({ data }: Props) => {
       label: "Investment Round " + (index + 1),
       value: (index + 1).toString(),
       component: (
-        <Row key={round.value} align="middle" gutter={[40, 0]}>
-          <Col span={12}>
+        <Row key={round.value} align="middle" gutter={[40, 20]}>
+          <Col xs={24} lg={12} md={24}>
             <DatePickerComponent disabled dateValue={round.startDate} />
           </Col>
 
-          <Col span={12}>
+          <Col xs={24} lg={12} md={24}>
             <DatePickerComponent disabled dateValue={round.endDate} />
           </Col>
         </Row>

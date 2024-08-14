@@ -24,15 +24,27 @@ const CheckboxComponent: React.FC<CheckBoxProps> = (props) => {
         onChange={onChange}
         disabled={disabled}
       >
-        <Row gutter={[40, 40]}>
+        <Row gutter={[40, 20]}>
           {optionsData.map((option) => (
             <React.Fragment key={option.value}>
-              <Col span={option.component ? 6 : 24} className="mt-3">
-                <Checkbox value={option.value} disabled={disabled}>
-                  {option.label}
-                </Checkbox>
-              </Col>
-              {option.component && <Col span={18}>{option.component}</Col>}
+              {option.component ? (
+                <>
+                  <Col xs={24} lg={6} md={6} sm={24} className="mt-3">
+                    <Checkbox value={option.value} disabled={disabled}>
+                      {option.label}
+                    </Checkbox>
+                  </Col>
+                  <Col xs={24} lg={18} md={18} sm={24}>
+                    {option.component}
+                  </Col>
+                </>
+              ) : (
+                <Col span={24} className="mt-3">
+                  <Checkbox value={option.value} disabled={disabled}>
+                    {option.label}
+                  </Checkbox>
+                </Col>
+              )}
             </React.Fragment>
           ))}
         </Row>
