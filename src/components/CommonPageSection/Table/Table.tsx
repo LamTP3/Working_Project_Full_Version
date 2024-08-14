@@ -16,7 +16,7 @@ const Table: React.FC<TableProps> = (props) => {
   const { data, onPageChange, currentPage, pageSize, TableHead, TableBody } =
     props;
   return (
-    <>
+    <div className="min-w-max">
       <div>
         <table className="table-content">
           <thead>{TableHead}</thead>
@@ -32,7 +32,7 @@ const Table: React.FC<TableProps> = (props) => {
           onChange={onPageChange}
         />
       </div>
-    </>
+    </div>
   );
 };
 
