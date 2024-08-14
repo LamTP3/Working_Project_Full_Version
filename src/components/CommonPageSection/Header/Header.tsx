@@ -37,11 +37,17 @@ const Header = () => {
             open={open}
           >
             <div className="flex flex-col gap-3 h-full text-white">
-              <Link className="hover:bg-slate-500 font-medium" to="/list">
-                Project List
+              <Link
+                className="hover:bg-slate-500 font-medium"
+                to={ROUTER.PROJECT_LIST}
+              >
+                Projects
               </Link>
-              <Link className="hover:bg-slate-500 font-medium" to="/">
-                SubmitProject
+              <Link
+                className="hover:bg-slate-500 font-medium"
+                to={ROUTER.SUBMIT_PROJECT}
+              >
+                Add Project
               </Link>
               <Button className="header-logout-btn mt-auto bg-[#191b3c] border-white text-white">
                 logout

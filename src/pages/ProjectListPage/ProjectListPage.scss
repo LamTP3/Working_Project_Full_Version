@@ -7,13 +7,21 @@
   color: #ffffff;
 }
 
-Table {
-  overflow-x: auto;
-}
-
 @media (max-width: 765px) {
   .projectlist-inner {
     padding-left: 20px;
     padding-right: 20px;
+  }
+}
+.task-search {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+}
+
+@media screen and (max-width: 500px) {
+  .task-search {
+    flex-direction: column;
+    gap: 10px;
   }
 }

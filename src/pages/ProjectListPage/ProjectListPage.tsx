@@ -614,9 +614,9 @@ const ProjectListPage = () => {
           className="mt-[30px]"
           items={[{ title: "Admin CP" }, { title: "Projects" }]}
         />
-        <div className="flex justify-between mt-[30px]">
+        <div className="task-search ">
           <h1 className="font__style">Project List</h1>
-          <div className="max-w-[250px]">
+          <div className="max-w-[250px] ">
             <SearchComp placeholder="Search project" />
           </div>
         </div>
