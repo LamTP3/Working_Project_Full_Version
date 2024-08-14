@@ -511,7 +511,7 @@ const ProjectListPage = () => {
     return (
       <>
         {data.map((item: any) => (
-          <tr key={item.id}>
+          <tr className="" key={item.id}>
             <td>
               <div className="project-table-style">
                 <div style={{ width: "40px", height: "40px" }}>
