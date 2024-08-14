@@ -17,11 +17,11 @@ const TokenInformation: React.FC<TokenInformationProps> = ({ data }) => {
     <div>
       <Row>
         <Col className="gutter-row mb-[30px]" span={24}>
-          <Row gutter={[40, 0]}>
-            <Col className="gutter-row " span={12}>
+          <Row gutter={[40, 20]}>
+            <Col className="gutter-row " xs={24} lg={12} md={24}>
               <div className="flex gap-[20px]">
                 <div className="w-full">
-                  <div className="mb-2">
+                  <div className="mb-2 w-full">
                     <LabelComponent label="Token name " />
                   </div>
                   <div>
@@ -34,10 +34,10 @@ const TokenInformation: React.FC<TokenInformationProps> = ({ data }) => {
                   </div>
                 </div>
                 <div>
-                  <div className="mb-2">
+                  <div className="mb-2 w-[130px]">
                     <LabelComponent label="Token Symbol " />
                   </div>
-                  <div className="max-w-[180px]">
+                  <div>
                     <InputComp
                       name="token_information.token_symbol"
                       placeholder="e.g. BTC"
@@ -48,7 +48,7 @@ const TokenInformation: React.FC<TokenInformationProps> = ({ data }) => {
                 </div>
               </div>
             </Col>
-            <Col className="gutter-row " span={12}>
+            <Col className="gutter-row " xs={24} md={12}>
               <div>
                 <div className="mb-2">
                   <LabelComponent label="Token contract address" />

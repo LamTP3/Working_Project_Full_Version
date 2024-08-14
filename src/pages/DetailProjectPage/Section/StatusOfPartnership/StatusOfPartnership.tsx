@@ -1,7 +1,6 @@
-import { Col, Row } from "antd";
 import { useState } from "react";
 import { CheckboxComponent } from "../../../../components";
-
+import "./StatusOfPartnerships.scss";
 interface Props {
   data: any;
 }
@@ -19,28 +18,19 @@ const StatusOfPartnership: React.FC<Props> = ({ data }) => {
   };
 
   return (
-    <div>
-      <Row>
-        <Col className="gutter-row" span={24}>
-          <Row>
-            <Col className="gutter-row" span={12}>
-              {data ? (
-                <CheckboxComponent
-                  optionsData={options}
-                  useCricle={false}
-                  onChange={handleCheckboxChange}
-                  height={true}
-                  allValues={data}
-                  disabled
-                />
-              ) : (
-                <div> Somthing Wrong</div>
-              )}
-            </Col>
-          </Row>
-        </Col>
-      </Row>
-    </div>
+    <>
+      {data ? (
+        <CheckboxComponent
+          optionsData={options}
+          useCricle={false}
+          onChange={handleCheckboxChange}
+          allValues={data}
+          disabled
+        />
+      ) : (
+        <div> Somthing Wrong</div>
+      )}
+    </>
   );
 };
 

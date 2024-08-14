@@ -9,7 +9,6 @@ import {
 import { FormikProps } from "formik";
 import { Project } from "../../../../types/type";
 import "./PublicTokenSale.scss";
-
 interface PublicTokenSaleProps {
   formik: FormikProps<Project>;
 }
@@ -90,7 +89,7 @@ const PublicTokenSale: React.FC<PublicTokenSaleProps> = ({ formik }) => {
             ) : null}
           </div>
         </Col>
-        <Col span={12} className="pr-9 mt-5">
+        <Col xs={24} md={12} className="pr-9 mt-5">
           <div>
             <LabelComponent
               label="Planned FDV of tokens at launch? "

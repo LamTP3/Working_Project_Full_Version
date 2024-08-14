@@ -14,7 +14,7 @@ const Links: React.FC<LinkProps> = ({ data }) => {
   return (
     <div>
       <Row gutter={[20, 30]}>
-        <Col span={12}>
+        <Col xs={24} md={12}>
           <div>
             <LabelComponent label="Project Website" />
           </div>
@@ -27,7 +27,7 @@ const Links: React.FC<LinkProps> = ({ data }) => {
             />
           </div>
         </Col>
-        <Col span={12}>
+        <Col xs={24} md={12}>
           <div>
             <LabelComponent label="Project Twitter" />
           </div>
@@ -40,7 +40,7 @@ const Links: React.FC<LinkProps> = ({ data }) => {
             />
           </div>
         </Col>
-        <Col span={12}>
+        <Col xs={24} md={12}>
           <div>
             <LabelComponent label="Project Telegram" />
           </div>
@@ -53,7 +53,7 @@ const Links: React.FC<LinkProps> = ({ data }) => {
             />
           </div>
         </Col>
-        <Col span={12}>
+        <Col xs={24} md={12}>
           <div>
             <LabelComponent label="Project Medium" />
           </div>
@@ -66,7 +66,7 @@ const Links: React.FC<LinkProps> = ({ data }) => {
             />
           </div>
         </Col>
-        <Col span={24}>
+        <Col xs={24} md={12}>
           <div>
             <div>
               <LabelComponent label="Project other links" />

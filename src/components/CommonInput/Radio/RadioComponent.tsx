@@ -3,7 +3,7 @@ import type { RadioChangeEvent } from "antd";
 import { Radio } from "antd";
 import { StyledRadio } from "./styled";
 import { RadioComponentProps } from "../CommonInputType";
-
+import "../../../../src/assets/Logo/image.png";
 const RadioComponent: React.FC<RadioComponentProps> = (props) => {
   /** REQUIRE PARAMS
    * @param {Array} options       - dùng để hiện những option được chọn

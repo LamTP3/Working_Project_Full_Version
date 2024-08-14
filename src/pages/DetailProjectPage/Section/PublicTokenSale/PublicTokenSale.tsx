@@ -1,5 +1,5 @@
 import { Col, Row } from "antd";
-
+import "./PublicTokenSale.scss";
 import {
   LabelComponent,
   InputComp,
@@ -20,12 +20,12 @@ const PublicTokenSale: React.FC<PublicTokenSaleProps> = ({ data }) => {
   ];
   return (
     <div>
-      <Row>
-        <Col span={12} className="pr-9">
+      <Row gutter={[0, 10]}>
+        <Col xs={24} md={12} className="repon-pd pr-9">
           <div>
             <LabelComponent label="Total amount to be raised from public token sales?" />
           </div>
-          <div>
+          <div className="mt-2">
             <InputComp
               name="public_token_sale.total_amount"
               placeholder="$1,000,000"
@@ -34,11 +34,11 @@ const PublicTokenSale: React.FC<PublicTokenSaleProps> = ({ data }) => {
             />
           </div>
         </Col>
-        <Col span={12} className="pr-9">
+        <Col xs={24} md={12} className=" rp-mt-custom repon-pd  pr-9">
           <div>
             <LabelComponent label="Preferred amount to be raised through GalaxyPad?" />
           </div>
-          <div>
+          <div className="mt-2">
             <InputComp
               name="public_token_sale.amount_through_Galaxy"
               placeholder="$500,000"
@@ -47,11 +47,11 @@ const PublicTokenSale: React.FC<PublicTokenSaleProps> = ({ data }) => {
             />
           </div>
         </Col>
-        <Col span={12} className="pr-9 mt-5">
+        <Col xs={24} md={12} className="pr-9 mt-5">
           <div>
             <LabelComponent label="Are you flexible with the amounts? " />
           </div>
-          <div>
+          <div className="mt-2">
             {data ? (
               <RadioComponent
                 options={radioOptions}
@@ -61,11 +61,11 @@ const PublicTokenSale: React.FC<PublicTokenSaleProps> = ({ data }) => {
             ) : null}
           </div>
         </Col>
-        <Col span={12} className="pr-9 mt-5">
+        <Col xs={24} md={12} className="pr-9 mt-5">
           <div>
             <LabelComponent label="Planned FDV of tokens at launch? " />
           </div>
-          <div>
+          <div className="mt-2">
             <InputComp
               name="public_token_sale.planned_FDV"
               placeholder="$30,000,000"
@@ -75,12 +75,12 @@ const PublicTokenSale: React.FC<PublicTokenSaleProps> = ({ data }) => {
           </div>
         </Col>
       </Row>
-      <Row>
-        <Col span={24} className=" pr-9">
+      <Row gutter={[0, 10]}>
+        <Col xs={24} md={12} className=" pr-9">
           <div>
             <LabelComponent label="Other information" />
           </div>
-          <div>
+          <div className="mt-2">
             <TextAreaComp
               name="public_token_sale.other_information"
               placeholder="Provide any information that helps us understand any expectations that you have."
@@ -93,7 +93,7 @@ const PublicTokenSale: React.FC<PublicTokenSaleProps> = ({ data }) => {
           <div>
             <LabelComponent label="When do you want to conduct the sale?" />
           </div>
-          <div>
+          <div className="mt-2">
             <InputComp
               name="public_token_sale.sale"
               placeholder="Provide any information that helps us understand any expectations that you have."

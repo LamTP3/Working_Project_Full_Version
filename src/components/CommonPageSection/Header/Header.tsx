@@ -56,7 +56,7 @@ const Header = () => {
               Add Project
             </Link>
           </div>
-          <div className="header-right">
+          <div className="header-right ml-auto">
             <div className="header-welcome">
               <p className="header-text header-text-welcome">Welcome</p>
               <p className="header-text header-text-name"> Admin !</p>

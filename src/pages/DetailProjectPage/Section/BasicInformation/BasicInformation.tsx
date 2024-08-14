@@ -15,8 +15,8 @@ const BasicInformation: React.FC<BasicInformationProps> = ({ data }) => {
       <div>
         <Row>
           <Col className="gutter-row mt-5" span={24}>
-            <Row gutter={[40, 0]}>
-              <Col span={12}>
+            <Row gutter={[40, 30]}>
+              <Col xs={24} md={12}>
                 <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
                   <Col className="gutter-row " span={24}>
                     <div>
@@ -46,7 +46,7 @@ const BasicInformation: React.FC<BasicInformationProps> = ({ data }) => {
                   </Col>
                 </Row>
               </Col>
-              <Col span={12}>
+              <Col xs={24} md={12}>
                 <div>
                   <LabelComponent label="Project Logo" />
                 </div>
@@ -63,8 +63,8 @@ const BasicInformation: React.FC<BasicInformationProps> = ({ data }) => {
             </Row>
           </Col>
           <Col className="gutter-row mt-5" span={24}>
-            <Row gutter={[40, 0]}>
-              <Col span={12}>
+            <Row gutter={[40, 30]}>
+              <Col xs={24} md={12}>
                 <Row>
                   <Col className="gutter-row " span={24}>
                     <div>

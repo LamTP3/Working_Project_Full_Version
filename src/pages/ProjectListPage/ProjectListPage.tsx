@@ -608,26 +608,27 @@ const ProjectListPage = () => {
   ];
 
   return (
-    <div className="mr-auto ml-auto max-w-[1196px]">
-      <div>
+    <div className="w-full">
+      <div className="xl:px-[122px] md:px-[80px] xs-pd-20">
         <BreadCrumbComp
           className="mt-[30px]"
           items={[{ title: "Admin CP" }, { title: "Projects" }]}
         />
-      </div>
-      <div className="flex justify-between mt-[30px]">
-        <h1 className="font__style">Project List</h1>
-        <div className="max-w-[250px]">
-          <SearchComp placeholder="Search project" />
+        <div className="flex justify-between mt-[30px]">
+          <h1 className="font__style">Project List</h1>
+          <div className="max-w-[250px]">
+            <SearchComp placeholder="Search project" />
+          </div>
+        </div>
+        <div className="mt-[20px]">
+          <TabsComp
+            defaultActiveKey="1"
+            items={tabs}
+            onChange={handleTabChange}
+          />
         </div>
       </div>
-      <div className="mt-[20px]">
-        <TabsComp
-          defaultActiveKey="1"
-          items={tabs}
-          onChange={handleTabChange}
-        />
-      </div>
+
       <ModalComponents
         open={open}
         handleCancel={handleCancel}

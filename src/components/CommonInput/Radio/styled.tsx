@@ -18,7 +18,7 @@ export const StyledRadio = styled.div<RadioProps>`
 
     .ant-radio + * {
       color: var(--text-color);
-      font-family: var(--font-family);
+      font-family: Inter;
       font-size: 16px;
       font-weight: 500;
       line-height: 19.36px;
@@ -33,7 +33,8 @@ export const StyledRadio = styled.div<RadioProps>`
       display: block;
       width: 12px;
       height: 12px;
-      background: url(../../../assets/Logo/image.png) no-repeat center center;
+      background: url(../../../../src/assets/Logo/image.png) no-repeat center
+        center;
       background-size: contain;
       position: absolute;
       top: 50%;

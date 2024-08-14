@@ -25,7 +25,7 @@ const ProjectDetails: React.FC<ProjectDetailProps> = ({ formik }) => {
       <Row>
         <Col className="gutter-row mb-[30px]" span={24}>
           <Row gutter={{ xs: 8, sm: 16, md: 24, lg: 32 }}>
-            <Col className="gutter-row" span={12}>
+            <Col className="gutter-row" xs={24} md={12}>
               <div>
                 <LabelComponent label="Project start date" required />
               </div>
